@@ -53,7 +53,7 @@ function App() {
               style={{ width: '25rem', height: '24rem' }}
             >
               <img
-                src="/fabian.jpg"
+                src="/pfp.jpg"
                 alt="Fabian Galasel"
                 className="w-full h-full object-cover"
               />
