@@ -77,7 +77,7 @@ function App() {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <img
-                    src="/fabian.jpg"
+                    src="/pfp.jpg"
                     alt="Fabian Galasel Large"
                     className="w-full h-full object-contain"
                   />
