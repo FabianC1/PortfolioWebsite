@@ -1,54 +1,43 @@
-# React + TypeScript + Vite
+# Fabian Galasel Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website repository! This site showcases my skills, projects, education, and contact information as an aspiring software developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This is a modern, responsive portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**. It features a sleek dark theme, smooth navigation, and interactive components such as an image modal and social media buttons.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Responsive design for mobile and desktop
+- Dark-themed layout with custom colors
+- Transparent header with navigation links
+- Profile section with clickable profile image modal
+- Social buttons with icons and hover effects
+- Sections for About, Education, Projects, and Contact
+- Smooth scrolling navigation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Tech Stack
+
+- **React** — Frontend library for building UI components  
+- **TypeScript** — Typed JavaScript for safer and scalable code  
+- **Tailwind CSS** — Utility-first CSS framework for rapid styling  
+- **Vite** — Development server and build tool for fast performance  
+- **React Icons** — For social media and other icons  
+
+---
+
+## Getting Started
+
+## Contact
+
+I'd love to hear from you! Whether you have questions, opportunities, or just want to connect, feel free to reach out:
+
+- **LinkedIn:** [fabian-galasel](https://www.linkedin.com/in/fabian-galasel)  
+- **GitHub:** [FabianC1](https://github.com/FabianC1)  
+- **Email:** galaselfabian@gmail.com
