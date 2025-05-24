@@ -22,6 +22,14 @@ function App() {
   return (
     <div className="min-h-screen bg-charcoalBlack text-white font-sans">
 
+      <style>
+        {`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}
+      </style>
+
       {/* Transparent Header */}
       <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm px-6 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
@@ -122,17 +130,39 @@ function App() {
       {/* Sections (to be expanded) */}
       <section id="about" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-4">About</h2>
-        <p className="text-gray-300">Coming soon...</p>
-      </section>
-
-      <section id="education" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-4">Education</h2>
-        <p className="text-gray-300">Middlesex University – BSc Computer Science</p>
+        <p className="text-gray-300 leading-relaxed">
+          I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
+          I recently graduated with a BSc in Computer Science from Middlesex University.
+          Skilled in JavaScript, React, Python, and machine learning, I am eager to contribute to innovative projects and grow in the tech industry.
+        </p>
       </section>
 
       <section id="projects" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-4">Projects</h2>
-        <p className="text-gray-300">Project highlights coming soon...</p>
+        <h2 className="text-3xl font-bold text-purple-300 mb-8">Projects</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
+            <h3 className="text-xl font-semibold mb-2">Housing Price Prediction</h3>
+            <p className="text-gray-300 mb-4">A machine learning project predicting house prices using regression models.</p>
+            <a href="https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models" target="_blank" rel="noopener noreferrer" className="text-skyBlue hover:text-neonPurple">
+              View on GitHub
+            </a>
+          </div>
+          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
+            <h3 className="text-xl font-semibold mb-2">PulseTech Mobile App</h3>
+            <p className="text-gray-300 mb-4">A React Native app for medication reminders, messaging, and appointment management.</p>
+            <a href="https://github.com/FabianC1/PulseTechMobile" target="_blank" rel="noopener noreferrer" className="text-skyBlue hover:text-neonPurple">
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
+        <h2 className="text-3xl font-bold text-purple-300 mb-4">Contact</h2>
+        <p className="text-gray-300 mb-6">Feel free to reach out via email or connect on LinkedIn.</p>
+        <a href="mailto:galaselfabian@gmail.com" className="text-skyBlue hover:text-neonPurple underline">
+          galaselfabian@gmail.com
+        </a>
       </section>
 
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
