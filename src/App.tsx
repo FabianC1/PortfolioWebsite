@@ -32,7 +32,7 @@ function App() {
       </style>
 
       {/* Transparent Header */}
-      <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm px-6 py-4 flex justify-between items-center">
+      <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm px-6 py-6 flex justify-between items-center">
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
         <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
           <a href="#about" className="hover:text-white transition">About</a>
@@ -43,7 +43,7 @@ function App() {
       </header>
 
       <header className="flex items-center justify-center min-h-[60vh] pl-32 pr-30 bg-darkPurple">
-        <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24">
+        <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24 pt-20">
 
           <>
             {/* Profile Image */}
