@@ -5,13 +5,18 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleImageClick = () => {
     setIsModalOpen(true);
+    // Start animation after the modal is shown
+    setTimeout(() => setIsAnimating(true), 10);
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
+    setIsAnimating(false);
+    // Wait for animation to finish before hiding modal
+    setTimeout(() => setIsModalOpen(false), 300);
   };
 
   return (
@@ -31,37 +36,47 @@ function App() {
       <header className="flex items-center justify-center min-h-[60vh] pl-32 pr-30 bg-darkPurple">
         <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24">
 
-          {/* Profile Image */}
-          <div
-            onClick={handleImageClick}
-            className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg"
-            style={{ width: '25rem', height: '24rem' }}
-          >
-            <img
-              src="/fabian.jpg"
-              alt="Fabian Galasel"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Modal */}
-          {isModalOpen && (
+          <>
+            {/* Profile Image */}
             <div
-              className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-              onClick={handleCloseModal}
+              onClick={handleImageClick}
+              className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg"
+              style={{ width: '25rem', height: '24rem' }}
             >
-              <div
-                className="w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg"
-                onClick={(e) => e.stopPropagation()} // Prevent modal close on image click
-              >
-                <img
-                  src="/fabian.jpg"
-                  alt="Fabian Galasel Large"
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <img
+                src="/fabian.jpg"
+                alt="Fabian Galasel"
+                className="w-full h-full object-cover"
+              />
             </div>
-          )}
+
+            {/* Modal */}
+            {isModalOpen && (
+              <div
+                className={`fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50
+                  transition-opacity duration-300
+                  ${isAnimating ? 'opacity-100' : 'opacity-0'}
+                  `}
+                onClick={handleCloseModal}
+              >
+                <div
+                  className={`
+                    w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg border-2 border-white
+                    transform transition-transform duration-300
+                    ${isAnimating ? 'scale-100' : 'scale-90'}
+                    `}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <img
+                    src="/fabian.jpg"
+                    alt="Fabian Galasel Large"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+
+            )}
+          </>
 
 
           {/* Name, Title, and Social Links */}
