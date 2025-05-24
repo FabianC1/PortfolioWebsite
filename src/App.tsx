@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import './index.css';
 
 
 function App() {
@@ -92,13 +93,12 @@ function App() {
             <h1 className="text-4xl md:text-5xl font-extrabold">Fabian Galasel</h1>
             <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">Aspiring Software Developer</p>
 
-            {/* Social Buttons below title */}
             <div className="mt-10 flex space-x-4 justify-center md:justify-start">
               <a
                 href="https://github.com/FabianC1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 border border-white text-skyBlue hover:text-neonPurple hover:border-neonPurple px-4 py-2 rounded-full transition duration-300"
+                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-300"
                 aria-label="GitHub"
               >
                 <FaGithub className="text-2xl" />
@@ -108,13 +108,14 @@ function App() {
                 href="https://www.linkedin.com/in/fabian-galasel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 border border-white text-skyBlue hover:text-neonPurple hover:border-neonPurple px-4 py-2 rounded-full transition duration-300"
+                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-300"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-2xl" />
                 <span className="font-medium">LinkedIn</span>
               </a>
             </div>
+
 
 
           </div>
@@ -133,7 +134,7 @@ function App() {
         <p className="text-gray-300 leading-relaxed">
           I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
           I recently graduated with a BSc in Computer Science from Middlesex University.
-          Skilled in JavaScript, React, Python, and machine learning, I am eager to contribute to innovative projects and grow in the tech industry.
+          Skilled in JavaScript, React, Python, and React, I am eager to contribute to innovative projects and grow in the tech industry.
         </p>
       </section>
 

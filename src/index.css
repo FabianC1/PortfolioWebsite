@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.slide-bg {
+  background: linear-gradient(
+    to right,
+    rgb(131, 89, 228) 50%,   
+    transparent 50% 
+  );
+  background-size: 200% 100%;
+  background-position: right bottom; 
+  border: 2px solid white;
+  color: #0ea5e9;
+  transition: background-position 0.3s ease, color 0.3s ease;
+  background-repeat: no-repeat;
+}
+
+.slide-bg:hover {
+  background-position: left bottom; 
+  color: white !important;
+}
