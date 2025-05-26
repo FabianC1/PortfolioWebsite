@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import './index.css';
-
+import './App.css';
 
 function App() {
 
@@ -22,14 +22,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-charcoalBlack text-white font-sans">
-
-      <style>
-        {`
-          html {
-            scroll-behavior: smooth;
-          }
-        `}
-      </style>
 
       {/* Transparent Header */}
       <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm px-6 py-6 flex justify-between items-center">
