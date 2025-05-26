@@ -140,14 +140,15 @@ function App() {
 
         {/* Floating Skill Tags */}
         <div className="flex flex-wrap gap-3 mt-6">
-          {["JavaScript", "React", "React Native", "Python", "Git", "Tailwind CSS"].map((tech) => (
-            <span
-              key={tech}
-              className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
-            >
-              {tech}
-            </span>
-          ))}
+          {["TypeScript", "Bash", "JavaScript", "HTML5", "CSS3", "React", "React Native", "Node.js", "Express.js", "Python", 
+          "Kotlin", "Flask", "Axios", "C++", "Java", "Vue.js", , "React Navigation", "MongoDB"].map((tech) => (
+              <span
+                key={tech}
+                className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
+              >
+                {tech}
+              </span>
+            ))}
         </div>
 
       </section>
