@@ -211,6 +211,26 @@ function App() {
             </div>
           </div>
 
+          {/* PulseTech Mobile App Card */}
+          <div className="project-card">
+            <div className="project-card-content p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2 text-white">PulseTech Mobile App</h3>
+              <p className="text-gray-300 mb-4">
+                A React Native app for medication reminders, messaging, and appointment management.
+              </p>
+              <a
+                href="https://github.com/FabianC1/PulseTechMobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2"
+              >
+                <span>View on GitHub</span>
+                <FaGithub className="text-3xl" />
+              </a>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
