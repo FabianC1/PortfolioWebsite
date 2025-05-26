@@ -135,15 +135,18 @@ function App() {
           <img
             src="/image2.jpg"
             alt="Fabian Galasel"
-            className="w-40 h-40 rounded-full border-2 border-purple-500 hover:opacity-100 transition-opacity flex-shrink-0 mt-4 cursor-default"
+            className="w-40 h-40 rounded-full border-2 border-purple-500 hover:opacity-100 transition-opacity flex-shrink-0 mt-6 cursor-default"
             style={{ objectFit: "cover" }}
           />
 
           <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
             I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
             I recently graduated with a BSc in Computer Science from Middlesex University.
-            Skilled in JavaScript, React, Python, and React Native, I am eager to contribute to innovative projects and grow in the tech industry.
+            I’m looking for a role where I can keep growing—somewhere I can dedicate myself to learning new technologies, sharpening my skills, 
+            and becoming the best developer I can be.
           </p>
+
+
         </div>
 
         {/* Skills row below, centered */}
