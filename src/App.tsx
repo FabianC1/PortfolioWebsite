@@ -182,10 +182,12 @@ function App() {
                 href="https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-skyBlue hover:text-neonPurple underline"
+                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2 cursor-pointer"
               >
-                View on GitHub
+                <span>View on GitHub</span>
+                <FaGithub className="text-3xl" />
               </a>
+
             </div>
           </div>
 
@@ -200,16 +202,18 @@ function App() {
                 href="https://github.com/FabianC1/PulseTechMobile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-skyBlue hover:text-neonPurple underline"
+                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2"
               >
-                View on GitHub
+                <span>View on GitHub</span>
+                <FaGithub className="text-3xl" />
               </a>
+
             </div>
           </div>
 
         </div>
       </section>
-      
+
 
       <section id="education" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-8">Education</h2>
