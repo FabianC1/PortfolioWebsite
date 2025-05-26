@@ -133,11 +133,11 @@ function App() {
         {/* Picture and description side by side */}
         <div className="flex gap-16 items-start">
           <img
-            src="/pfp.jpg"
+            src="/image1.png"
             alt="Fabian Galasel"
             className="w-40 h-40 rounded-full border-2 border-purple-500 opacity-80 hover:opacity-100 transition-opacity flex-shrink-0 mt-4 cursor-pointer"
             style={{ objectFit: "cover" }}
-            onClick={() => handleImageClick("/pfp.jpg")}
+            onClick={() => handleImageClick("/image1.png")}
           />
 
           <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
