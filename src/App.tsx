@@ -124,14 +124,35 @@ function App() {
       <div className="h-20"></div>
 
       {/* Sections (to be expanded) */}
-      <section id="about" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-4">About</h2>
-        <p className="text-gray-300 leading-relaxed">
+      <section
+        id="about"
+        className="max-w-4xl mx-auto py-24 px-6 relative overflow-hidden"
+      >
+        <h2 className="text-3xl font-bold text-purple-300 mb-6">
+          About Me
+        </h2>
+
+        <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg">
           I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
           I recently graduated with a BSc in Computer Science from Middlesex University.
-          Skilled in JavaScript, React, Python, and React, I am eager to contribute to innovative projects and grow in the tech industry.
+          Skilled in JavaScript, React, Python, and React Native, I am eager to contribute to innovative projects and grow in the tech industry.
         </p>
+
+        {/* Floating Skill Tags */}
+        <div className="flex flex-wrap gap-3 mt-6">
+          {["JavaScript", "React", "React Native", "Python", "Git", "Tailwind CSS"].map((tech) => (
+            <span
+              key={tech}
+              className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
       </section>
+
+
 
       <section id="projects" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-8">Projects</h2>
@@ -159,11 +180,6 @@ function App() {
         <a href="mailto:galaselfabian@gmail.com" className="text-skyBlue hover:text-neonPurple underline">
           galaselfabian@gmail.com
         </a>
-      </section>
-
-      <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-4">Contact</h2>
-        <p className="text-gray-300">Let's get in touch!</p>
       </section>
 
       {/* Footer */}
