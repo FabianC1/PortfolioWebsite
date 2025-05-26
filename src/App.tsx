@@ -187,6 +187,28 @@ function App() {
         </div>
       </section>
 
+      <section id="education" className="max-w-4xl mx-auto py-20 px-6">
+        <h2 className="text-3xl font-bold text-purple-300 mb-8">Education</h2>
+        <div className="space-y-6">
+          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
+            <h3 className="text-xl font-semibold">Middlesex University</h3>
+            <p className="text-gray-300 font-medium">Bachelor of Computer Science</p>
+            <p className="text-gray-300 mb-2">2022 - 2025 | Expected First Class Honours</p>
+            <p className="text-gray-300">
+              Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development.
+            </p>
+          </div>
+          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
+            <h3 className="text-xl font-semibold">Stanmore College</h3>
+            <p className="text-gray-300 font-medium">IT BTEC Extended Diploma (RQF), Computer Science</p>
+            <p className="text-gray-300 mb-2">2019 - 2022 | Triple Distinction* (D*D*D*)</p>
+            <p className="text-gray-300">
+              Gained hands-on experience in full-stack development, cybersecurity, IT project management, and technical support.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-4">Contact</h2>
         <p className="text-gray-300 mb-6">Feel free to reach out via email or connect on LinkedIn.</p>
