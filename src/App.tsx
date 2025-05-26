@@ -111,8 +111,6 @@ function App() {
               </a>
             </div>
 
-
-
           </div>
 
         </div>
@@ -128,29 +126,41 @@ function App() {
         id="about"
         className="max-w-4xl mx-auto py-24 px-6 relative overflow-hidden"
       >
-        <h2 className="text-3xl font-bold text-purple-300 mb-6">
-          About Me
-        </h2>
+        <h2 className="text-3xl font-bold text-purple-300 mb-6">About Me</h2>
 
-        <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg">
-          I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
-          I recently graduated with a BSc in Computer Science from Middlesex University.
-          Skilled in JavaScript, React, Python, and React Native, I am eager to contribute to innovative projects and grow in the tech industry.
-        </p>
+        {/* Picture and description side by side */}
+        <div className="flex gap-16 items-start">
+          <img
+            src="/path-to-your-photo.jpg"
+            alt="Fabian Galasel"
+            className="w-40 h-40 rounded-full border-2 border-purple-500 opacity-80 hover:opacity-100 transition-opacity flex-shrink-0 mt-4"
+            
+            style={{ objectFit: "cover" }}
+          />
 
-        {/* Floating Skill Tags */}
-        <div className="flex flex-wrap gap-3 mt-6">
-          {["TypeScript", "Bash", "JavaScript", "HTML5", "CSS3", "React", "React Native", "Node.js", "Express.js", "Python", 
-          "Kotlin", "Flask", "Axios", "C++", "Java", "Vue.js", , "React Navigation", "MongoDB"].map((tech) => (
-              <span
-                key={tech}
-                className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
-              >
-                {tech}
-              </span>
-            ))}
+          <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
+            I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
+            I recently graduated with a BSc in Computer Science from Middlesex University.
+            Skilled in JavaScript, React, Python, and React Native, I am eager to contribute to innovative projects and grow in the tech industry.
+          </p>
         </div>
 
+        {/* Skills row below, centered */}
+        <div className="flex flex-wrap justify-center gap-3 mt-8 max-w-4xl mx-auto">
+          {[
+            "TypeScript", "Bash", "JavaScript", "HTML5", "CSS3",
+            "React", "React Native", "Node.js", "Express.js", "Python",
+            "Kotlin", "Flask", "Axios", "C++", "Java",
+            "Vue.js", "React Navigation", "MongoDB"
+          ].map((tech) => (
+            <span
+              key={tech}
+              className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
       </section>
 
 
