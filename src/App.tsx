@@ -88,7 +88,7 @@ function App() {
           {/* Name, Title, and Social Links */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-extrabold">Fabian Galasel</h1>
-            <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">Aspiring Software Developer</p>
+            <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">Aspiring Software, Web & Mobile Developer</p>
 
             <div className="mt-10 flex space-x-4 justify-center md:justify-start">
               <a
@@ -140,10 +140,9 @@ function App() {
           />
 
           <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-            I am Fabian Galasel, an aspiring software developer with a passion for building web and mobile applications.
-            I recently graduated with a BSc in Computer Science from Middlesex University.
-            I’m looking for a role where I can keep growing—somewhere I can dedicate myself to learning new technologies, sharpening my skills, 
-            and becoming the best developer I can be.
+            I am Fabian Galasel, an aspiring software, web, and mobile developer with a passion for building impactful applications. 
+            I recently graduated with a BSc in Computer Science from Middlesex University. I'm now looking for a role where I can grow—putting in the time to master new technologies 
+            and continuously push myself to the next level.
           </p>
 
 
