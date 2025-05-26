@@ -42,7 +42,7 @@ function App() {
 
 
       <header className="flex items-center justify-center min-h-[60vh] pl-32 pr-30 bg-darkPurple">
-        <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24 pt-44">
+        <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24 pt-52">
 
           <>
             {/* Profile Image */}
@@ -121,7 +121,7 @@ function App() {
 
 
       {/* Spacer to push content below fixed header */}
-      <div className="h-20"></div>
+      <div className="h-16"></div>
 
       {/* Sections (to be expanded) */}
       <section
