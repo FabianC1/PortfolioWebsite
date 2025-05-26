@@ -5,20 +5,24 @@ import './App.css';
 
 function App() {
 
+  const [modalImageSrc, setModalImageSrc] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const handleImageClick = () => {
+  const handleImageClick = (src: string) => {
+    setModalImageSrc(src);
     setIsModalOpen(true);
-    // Start animation after the modal is shown
     setTimeout(() => setIsAnimating(true), 10);
   };
 
   const handleCloseModal = () => {
     setIsAnimating(false);
-    // Wait for animation to finish before hiding modal
-    setTimeout(() => setIsModalOpen(false), 300);
+    setTimeout(() => {
+      setIsModalOpen(false);
+      setModalImageSrc(null);
+    }, 300);
   };
+
 
   return (
     <div className="min-h-screen bg-charcoalBlack text-white font-sans">
@@ -30,8 +34,8 @@ function App() {
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
         <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
           <a href="#about" className="hover:text-white transition">About</a>
-          <a href="#education" className="hover:text-white transition">Education</a>
           <a href="#projects" className="hover:text-white transition">Projects</a>
+          <a href="#education" className="hover:text-white transition">Education</a>
           <a href="#contact" className="hover:text-white transition">Contact</a>
         </nav>
       </header>
@@ -43,7 +47,7 @@ function App() {
           <>
             {/* Profile Image */}
             <div
-              onClick={handleImageClick}
+              onClick={() => handleImageClick("/pfp.jpg")}
               className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg"
               style={{ width: '25rem', height: '24rem' }}
             >
@@ -55,30 +59,28 @@ function App() {
             </div>
 
             {/* Modal */}
-            {isModalOpen && (
+            {isModalOpen && modalImageSrc && (
               <div
                 className={`fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50
-                  transition-opacity duration-300
-                  ${isAnimating ? 'opacity-100' : 'opacity-0'}
-                  `}
+      transition-opacity duration-300
+      ${isAnimating ? 'opacity-100' : 'opacity-0'}
+      `}
                 onClick={handleCloseModal}
               >
                 <div
-                  className={`
-                    w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg border-2 border-white
-                    transform transition-transform duration-300
-                    ${isAnimating ? 'scale-100' : 'scale-90'}
-                    `}
+                  className={`w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg border-2 border-white
+        transform transition-transform duration-300
+        ${isAnimating ? 'scale-100' : 'scale-90'}
+        `}
                   onClick={(e) => e.stopPropagation()}
                 >
                   <img
-                    src="/pfp.jpg"
+                    src={modalImageSrc}
                     alt="Fabian Galasel Large"
                     className="w-full h-full object-contain"
                   />
                 </div>
               </div>
-
             )}
           </>
 
@@ -131,11 +133,11 @@ function App() {
         {/* Picture and description side by side */}
         <div className="flex gap-16 items-start">
           <img
-            src="/path-to-your-photo.jpg"
+            src="/pfp.jpg"
             alt="Fabian Galasel"
-            className="w-40 h-40 rounded-full border-2 border-purple-500 opacity-80 hover:opacity-100 transition-opacity flex-shrink-0 mt-4"
-            
+            className="w-40 h-40 rounded-full border-2 border-purple-500 opacity-80 hover:opacity-100 transition-opacity flex-shrink-0 mt-4 cursor-pointer"
             style={{ objectFit: "cover" }}
+            onClick={() => handleImageClick("/pfp.jpg")}
           />
 
           <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
