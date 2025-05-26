@@ -2,3 +2,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+.gradient-border-b {
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, #00BFFF, #8b5cf6);
+  border-image-slice: 1;
+}

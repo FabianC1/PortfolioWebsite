@@ -24,7 +24,9 @@ function App() {
     <div className="min-h-screen bg-charcoalBlack text-white font-sans">
 
       {/* Transparent Header */}
-      <header className="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm px-6 py-6 flex justify-between items-center">
+      <header
+        className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-[rgba(18,18,31,0.6)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
+      >
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
         <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
           <a href="#about" className="hover:text-white transition">About</a>
@@ -33,6 +35,7 @@ function App() {
           <a href="#contact" className="hover:text-white transition">Contact</a>
         </nav>
       </header>
+
 
       <header className="flex items-center justify-center min-h-[60vh] pl-32 pr-30 bg-darkPurple">
         <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24 pt-20">
