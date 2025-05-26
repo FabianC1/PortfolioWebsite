@@ -24,6 +24,7 @@ export default {
         neonPurple: '#BF40FF',
       }
     },
+    
   },
   plugins: [],
 }

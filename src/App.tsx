@@ -29,7 +29,7 @@ function App() {
 
       {/* Transparent Header */}
       <header
-        className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-[rgba(18,18,31,0.6)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
+        className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
       >
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
         <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
@@ -140,11 +140,10 @@ function App() {
           />
 
           <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-            I am Fabian Galasel, an aspiring software, web, and mobile developer with a passion for building impactful applications. 
-            I recently graduated with a BSc in Computer Science from Middlesex University. I'm now looking for a role where I can grow—putting in the time to master new technologies 
+            I am Fabian Galasel, an aspiring software, web, and mobile developer with a passion for building impactful applications.
+            I recently graduated with a BSc in Computer Science from Middlesex University. I'm now looking for a role where I can grow—putting in the time to master new technologies
             and continuously push myself to the next level.
           </p>
-
 
         </div>
 
@@ -153,7 +152,7 @@ function App() {
           {[
             "TypeScript", "Bash", "JavaScript", "HTML5", "CSS3",
             "React", "React Native", "Node.js", "Express.js", "Python",
-            "Kotlin", "Flask", "Axios", "C++", "Java",
+            "Kotlin", "Racket", "Postman", "C++", "Java",
             "Vue.js", "React Navigation", "MongoDB"
           ].map((tech) => (
             <span
@@ -171,22 +170,46 @@ function App() {
       <section id="projects" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-8">Projects</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Housing Price Prediction</h3>
-            <p className="text-gray-300 mb-4">A machine learning project predicting house prices using regression models.</p>
-            <a href="https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models" target="_blank" rel="noopener noreferrer" className="text-skyBlue hover:text-neonPurple">
-              View on GitHub
-            </a>
+
+          {/* Housing Price Prediction Card */}
+          <div className="project-card">
+            <div className="project-card-content p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2 text-white">Housing Price Prediction</h3>
+              <p className="text-gray-300 mb-4">
+                A machine learning project predicting house prices using regression models.
+              </p>
+              <a
+                href="https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-skyBlue hover:text-neonPurple underline"
+              >
+                View on GitHub
+              </a>
+            </div>
           </div>
-          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">PulseTech Mobile App</h3>
-            <p className="text-gray-300 mb-4">A React Native app for medication reminders, messaging, and appointment management.</p>
-            <a href="https://github.com/FabianC1/PulseTechMobile" target="_blank" rel="noopener noreferrer" className="text-skyBlue hover:text-neonPurple">
-              View on GitHub
-            </a>
+
+          {/* PulseTech Mobile App Card */}
+          <div className="project-card">
+            <div className="project-card-content p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold mb-2 text-white">PulseTech Mobile App</h3>
+              <p className="text-gray-300 mb-4">
+                A React Native app for medication reminders, messaging, and appointment management.
+              </p>
+              <a
+                href="https://github.com/FabianC1/PulseTechMobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-skyBlue hover:text-neonPurple underline"
+              >
+                View on GitHub
+              </a>
+            </div>
           </div>
+
         </div>
       </section>
+      
 
       <section id="education" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-8">Education</h2>
@@ -219,7 +242,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-6 text-sm text-#ffffff-500">
+      <footer className="text-center py-6 text-sm text-#ffffff-50">
         &copy; {new Date().getFullYear()} Fabian Galasel
       </footer>
     </div>
