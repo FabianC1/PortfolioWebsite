@@ -13,13 +13,21 @@ function ProjectsSection() {
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      if (e.deltaY === 0) return;
       e.preventDefault();
-      container.scrollLeft += e.deltaY * 1.5;
+
+      // Smooth horizontal scroll with a slightly boosted delta for better feel
+      container.scrollBy({
+        left: e.deltaY * 1.2,
+        behavior: 'smooth',
+      });
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => container.removeEventListener('wheel', handleWheel);
+
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
   }, []);
 
 
