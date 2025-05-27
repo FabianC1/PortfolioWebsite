@@ -68,4 +68,5 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  border: 2px dashed red;
 }

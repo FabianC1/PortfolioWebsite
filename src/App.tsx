@@ -45,25 +45,32 @@ function ProjectsSection() {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let scrollAmount = 0;
-    const scrollSpeed = 0.5;
     let animationFrameId: number;
+    let previousTimestamp: number | null = null;
+    const scrollSpeed = 60; // Increase speed to make movement visible
 
-    const autoScroll = () => {
-      if (scrollContainer.scrollWidth <= scrollContainer.clientWidth) return;
+    const step = (timestamp: number) => {
+      if (!previousTimestamp) previousTimestamp = timestamp;
+      const delta = timestamp - previousTimestamp;
+      previousTimestamp = timestamp;
 
       if (!isHovered) {
-        scrollAmount += scrollSpeed;
-        if (scrollAmount >= scrollContainer.scrollWidth) {
-          scrollAmount = 0;
+        const distance = (scrollSpeed * delta) / 1000;
+        scrollContainer.scrollLeft += distance;
+
+        if (
+          scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+          scrollContainer.scrollWidth
+        ) {
+          scrollContainer.scrollLeft = 0;
+          previousTimestamp = null; // reset timestamp to avoid jump
         }
-        scrollContainer.scrollLeft = scrollAmount;
       }
 
-      animationFrameId = requestAnimationFrame(autoScroll);
+      animationFrameId = requestAnimationFrame(step);
     };
 
-    animationFrameId = requestAnimationFrame(autoScroll);
+    animationFrameId = requestAnimationFrame(step);
 
     const onWheel = (e: WheelEvent) => {
       if (e.deltaY === 0) return;
@@ -77,7 +84,9 @@ function ProjectsSection() {
       cancelAnimationFrame(animationFrameId);
       scrollContainer.removeEventListener("wheel", onWheel);
     };
-  }, [isHovered]); 
+  }, [isHovered]);
+
+
 
   return (
     <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
@@ -88,9 +97,10 @@ function ProjectsSection() {
         className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-2"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        style={{ scrollBehavior: 'auto' }}
       >
         {projects.map(({ title, description, url }, index) => (
-          <div key={index} className="project-card snap-center shrink-0 w-80 relative">
+          <div key={index} className="project-card snap-center shrink-0 w-96">
             <div className="project-card-content p-6 rounded-lg shadow-lg h-full">
               <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
               <p className="text-gray-300 mb-4">{description}</p>
@@ -107,6 +117,7 @@ function ProjectsSection() {
           </div>
         ))}
       </div>
+
     </section>
   );
 }
