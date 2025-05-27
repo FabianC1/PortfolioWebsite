@@ -10,21 +10,18 @@ function ProjectsSection() {
 
   useEffect(() => {
     const container = scrollRef.current;
-
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault(); // Prevent vertical scroll
-      container.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      e.preventDefault();
+      container.scrollLeft += e.deltaY * 1.5;
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      container.removeEventListener('wheel', handleWheel);
-    };
+    return () => container.removeEventListener('wheel', handleWheel);
   }, []);
+
 
 
   const projects = [
@@ -68,8 +65,8 @@ function ProjectsSection() {
 
       <div
         ref={scrollRef}
-        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory px-2 whitespace-nowrap scrollbar-hide"
-        style={{ scrollBehavior: 'smooth', overflowY: 'hidden', height: 'auto' }}
+        className="flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
+        style={{ scrollBehavior: 'auto', overflowY: 'hidden', height: 'auto' }}
       >
         {projects.map(({ title, description, url }, index) => (
           <div key={index} className="project-card snap-center shrink-0 w-96">
