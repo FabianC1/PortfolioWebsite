@@ -4,87 +4,61 @@ import './index.css';
 import './App.css';
 
 
-const projects = [
-  {
-    title: "PulseTechMobile",
-    description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
-    url: "https://github.com/FabianC1/PulseTechMobile"
-  },
-  {
-    title: "Housing Price Prediction",
-    description: "A machine learning project predicting house prices using regression models.",
-    url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
-  },
-  {
-    title: "Lesson Booking System (Full Stack)",
-    description: "A full stack JavaScript app for booking lessons with frontend and backend integration.",
-    url: "https://github.com/FabianC1/LessonBookingSystem-FullStack"
-  },
-  {
-    title: "Swim School Management System",
-    description: "A Java desktop app managing swimming lessons and schedules.",
-    url: "https://github.com/FabianC1/SwimSchool-Management-System"
-  },
-  {
-    title: "Supply Chain System Software",
-    description: "A group project implemented in C++ for supply chain management.",
-    url: "https://github.com/FabianC1/Supply-Chain-System-Software"
-  },
-  {
-    title: "NLP Sentiment Analysis BiLSTM",
-    description: "An NLP project analyzing sentiment using BiLSTM networks.",
-    url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM"
-  }
-];
 
 function ProjectsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    const container = scrollRef.current;
 
-    let animationFrameId: number;
-    let previousTimestamp: number | null = null;
-    const scrollSpeed = 60; // Increase speed to make movement visible
+    if (!container) return;
 
-    const step = (timestamp: number) => {
-      if (!previousTimestamp) previousTimestamp = timestamp;
-      const delta = timestamp - previousTimestamp;
-      previousTimestamp = timestamp;
-
-      if (!isHovered) {
-        const distance = (scrollSpeed * delta) / 1000;
-        scrollContainer.scrollLeft += distance;
-
-        if (
-          scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-          scrollContainer.scrollWidth
-        ) {
-          scrollContainer.scrollLeft = 0;
-          previousTimestamp = null; // reset timestamp to avoid jump
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(step);
-    };
-
-    animationFrameId = requestAnimationFrame(step);
-
-    const onWheel = (e: WheelEvent) => {
+    const handleWheel = (e: WheelEvent) => {
       if (e.deltaY === 0) return;
-      e.preventDefault();
-      scrollContainer.scrollLeft += e.deltaY;
+      e.preventDefault(); // Prevent vertical scroll
+      container.scrollBy({ left: e.deltaY, behavior: 'smooth' });
     };
 
-    scrollContainer.addEventListener("wheel", onWheel, { passive: false });
+    container.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      scrollContainer.removeEventListener("wheel", onWheel);
+      container.removeEventListener('wheel', handleWheel);
     };
-  }, [isHovered]);
+  }, []);
+
+
+  const projects = [
+    {
+      title: "PulseTechMobile",
+      description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
+      url: "https://github.com/FabianC1/PulseTechMobile"
+    },
+    {
+      title: "Housing Price Prediction",
+      description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
+      url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
+    },
+    {
+      title: "Lesson Booking System (Full Stack)",
+      description: "A full stack JavaScript app enabling lesson booking with frontend and backend integration.",
+      url: "https://github.com/FabianC1/LessonBookingSystem-FullStack"
+    },
+    {
+      title: "Swim School Management System",
+      description: "A Java desktop application managing swimming lessons, schedules, students, and instructor assignments effectively.",
+      url: "https://github.com/FabianC1/SwimSchool-Management-System"
+    },
+    {
+      title: "Supply Chain System Software",
+      description: "A C++ group project implementing software solutions for efficient supply chain management.",
+      url: "https://github.com/FabianC1/Supply-Chain-System-Software"
+    },
+    {
+      title: "NLP Sentiment Analysis BiLSTM",
+      description: "An NLP project analyzing sentiment using BiLSTM networks for improved text classification results.",
+      url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM"
+    }
+  ];
 
 
 
@@ -94,31 +68,33 @@ function ProjectsSection() {
 
       <div
         ref={scrollRef}
-        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-2"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{ scrollBehavior: 'auto' }}
+        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory px-2 whitespace-nowrap scrollbar-hide"
+        style={{ scrollBehavior: 'smooth', overflowY: 'hidden', height: 'auto' }}
       >
         {projects.map(({ title, description, url }, index) => (
           <div key={index} className="project-card snap-center shrink-0 w-96">
-            <div className="project-card-content p-6 rounded-lg shadow-lg h-full">
-              <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-              <p className="text-gray-300 mb-4">{description}</p>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2 cursor-pointer"
-              >
-                <span>View on GitHub</span>
-                <FaGithub className="text-3xl" />
-              </a>
+            <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
+              <h3 className="text-xl font-semibold mb-2 text-white cursor-default">{title}</h3>
+              <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
+                {description}
+              </p>
+              <div className="mt-auto">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2 cursor-pointer"
+                >
+                  <span>View on GitHub</span>
+                  <FaGithub className="text-xl" />
+                </a>
+              </div>
             </div>
           </div>
         ))}
       </div>
-
     </section>
+
   );
 }
 
