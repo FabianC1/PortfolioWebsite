@@ -1,7 +1,117 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import './index.css';
 import './App.css';
+
+
+const projects = [
+  {
+    title: "PulseTechMobile",
+    description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
+    url: "https://github.com/FabianC1/PulseTechMobile"
+  },
+  {
+    title: "Housing Price Prediction",
+    description: "A machine learning project predicting house prices using regression models.",
+    url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
+  },
+  {
+    title: "Lesson Booking System (Full Stack)",
+    description: "A full stack JavaScript app for booking lessons with frontend and backend integration.",
+    url: "https://github.com/FabianC1/LessonBookingSystem-FullStack"
+  },
+  {
+    title: "Swim School Management System",
+    description: "A Java desktop app managing swimming lessons and schedules.",
+    url: "https://github.com/FabianC1/SwimSchool-Management-System"
+  },
+  {
+    title: "Supply Chain System Software",
+    description: "A group project implemented in C++ for supply chain management.",
+    url: "https://github.com/FabianC1/Supply-Chain-System-Software"
+  },
+  {
+    title: "NLP Sentiment Analysis BiLSTM",
+    description: "An NLP project analyzing sentiment using BiLSTM networks.",
+    url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM"
+  }
+];
+
+function ProjectsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollAmount = 0;
+    const scrollSpeed = 0.5;
+    let animationFrameId: number;
+
+    const autoScroll = () => {
+      if (scrollContainer.scrollWidth <= scrollContainer.clientWidth) return;
+
+      if (!isHovered) {
+        scrollAmount += scrollSpeed;
+        if (scrollAmount >= scrollContainer.scrollWidth) {
+          scrollAmount = 0;
+        }
+        scrollContainer.scrollLeft = scrollAmount;
+      }
+
+      animationFrameId = requestAnimationFrame(autoScroll);
+    };
+
+    animationFrameId = requestAnimationFrame(autoScroll);
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      scrollContainer.scrollLeft += e.deltaY;
+    };
+
+    scrollContainer.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      scrollContainer.removeEventListener("wheel", onWheel);
+    };
+  }, [isHovered]); 
+
+  return (
+    <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
+      <h2 className="text-3xl font-bold text-purple-300 mb-8">Projects</h2>
+
+      <div
+        ref={scrollRef}
+        className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-2"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {projects.map(({ title, description, url }, index) => (
+          <div key={index} className="project-card snap-center shrink-0 w-80 relative">
+            <div className="project-card-content p-6 rounded-lg shadow-lg h-full">
+              <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+              <p className="text-gray-300 mb-4">{description}</p>
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2 cursor-pointer"
+              >
+                <span>View on GitHub</span>
+                <FaGithub className="text-3xl" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
 
 function App() {
 
@@ -165,74 +275,7 @@ function App() {
         </div>
       </section>
 
-
-
-      <section id="projects" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-8">Projects</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {/* Housing Price Prediction Card */}
-          <div className="project-card">
-            <div className="project-card-content p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2 text-white">Housing Price Prediction</h3>
-              <p className="text-gray-300 mb-4">
-                A machine learning project predicting house prices using regression models.
-              </p>
-              <a
-                href="https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2 cursor-pointer"
-              >
-                <span>View on GitHub</span>
-                <FaGithub className="text-3xl" />
-              </a>
-
-            </div>
-          </div>
-
-          {/* PulseTech Mobile App Card */}
-          <div className="project-card">
-            <div className="project-card-content p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2 text-white">PulseTech Mobile App</h3>
-              <p className="text-gray-300 mb-4">
-                A React Native app for medication reminders, messaging, and appointment management.
-              </p>
-              <a
-                href="https://github.com/FabianC1/PulseTechMobile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2"
-              >
-                <span>View on GitHub</span>
-                <FaGithub className="text-3xl" />
-              </a>
-
-            </div>
-          </div>
-
-          {/* PulseTech Mobile App Card */}
-          <div className="project-card">
-            <div className="project-card-content p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2 text-white">PulseTech Mobile App</h3>
-              <p className="text-gray-300 mb-4">
-                A React Native app for medication reminders, messaging, and appointment management.
-              </p>
-              <a
-                href="https://github.com/FabianC1/PulseTechMobile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2"
-              >
-                <span>View on GitHub</span>
-                <FaGithub className="text-3xl" />
-              </a>
-
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <ProjectsSection />
 
 
       <section id="education" className="max-w-4xl mx-auto py-20 px-6">
