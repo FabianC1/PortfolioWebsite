@@ -346,7 +346,7 @@ function App() {
                   href="https://github.com/FabianC1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-3000"
+                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full "
                   aria-label="GitHub"
                 >
                   <FaGithub className="text-2xl" />
@@ -356,7 +356,7 @@ function App() {
                   href="https://www.linkedin.com/in/fabian-galasel"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-3000"
+                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin className="text-2xl" />
@@ -368,7 +368,7 @@ function App() {
               <a
                 href="/Fabian_Galasel_CV.pdf"
                 download
-                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-3000"
+                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full "
                 style={{ marginLeft: '52px' }} // manually adjust for better visual centering
               >
                 <span className="font-medium">Download CV</span>
@@ -438,19 +438,53 @@ function App() {
 
       {/* Contact section */}
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-4">Contact</h2>
-        <p className="text-gray-300 mb-6">Feel free to reach out via email or connect on LinkedIn.</p>
-        <a href="mailto:galaselfabian@gmail.com" className="text-skyBlue hover:text-neonPurple underline">
-          galaselfabian@gmail.com
-        </a>
-        <p className="text-gray-300 mb-1">Phone: <span className="text-skyBlue">+44 7123 456 789</span></p>
+        <h2 className="text-3xl font-bold text-purple-300 mb-8">Contact</h2>
+        <p className="text-gray-300 mb-8">
+          Feel free to reach out via email or phone. I'm open to opportunities and happy to connect!
+        </p>
 
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Email Card */}
+          <a
+            href="mailto:galaselfabian@gmail.com"
+            className="group flex justify-center items-center gap-6 border border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-neonPurple hover:shadow-lg hover:shadow-neonPurple/50"
+          >
+            <img
+              src="/gmail.png"
+              alt="Email Icon"
+              className="w-6 h-6 transition-transform group-hover:scale-110 duration-700"
+            />
+            <span className="text-skyBlue group-hover:text-white text-center transition-colors duration-700 ease-in-out">
+              galaselfabian@gmail.com
+            </span>
+          </a>
+
+          {/* Phone Card */}
+          <div className="group flex justify-center items-center gap-6 border border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-neonPurple hover:shadow-lg hover:shadow-neonPurple/50">
+            <img
+              src="/phone.png"
+              alt="Phone Icon"
+              className="w-6 h-6 transition-transform group-hover:scale-110 duration-700"
+            />
+            <span className="text-skyBlue group-hover:text-white text-center transition-colors duration-700 ease-in-out">
+              +44 7458 358 427
+            </span>
+          </div>
+        </div>
       </section>
 
+
       {/* Footer */}
-      <footer className="text-center py-6 text-sm text-#ffffff-50">
-        &copy; {new Date().getFullYear()} Fabian Galasel
+      <footer className="text-center py-6 text-sm text-white/50 flex items-center justify-center space-x-2">
+        <span>&copy; {new Date().getFullYear()} Fabian Galasel</span>
+        <img
+          src="/Signature.png"
+          alt="Fabian Galasel Signature"
+          className="h-20 filter invert contrast-200 brightness-200"
+        />
       </footer>
+
+
     </div>
   );
 }
