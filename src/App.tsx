@@ -124,40 +124,44 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
     >
       <div className="absolute left-0 top-2 w-4 h-4 bg-skyBlue rounded-full border-2 border-white"></div>
 
-
       <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-md">
-        <h3 className="text-xl font-semibold text-purple-300 flex items-center gap-3 mb-1">
-          <span>{item.institution}</span>
-          {item.logo && (
-            <img
-              src={item.logo}
-              alt={`${item.institution} logo`}
-              className="w-10 h-10 object-contain"
-            />
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Text Section */}
+          <div className="flex-1">
+            <h3 className="text-xl font-semibold text-purple-300 flex items-center gap-3 mb-1">
+              <span>{item.institution}</span>
+              {item.logo && (
+                <img
+                  src={item.logo}
+                  alt={`${item.institution} logo`}
+                  className="w-10 h-10 object-contain"
+                />
+              )}
+            </h3>
+            <p className="text-skyBlue">{item.degree}</p>
+            <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
+            <p className="text-gray-300 whitespace-pre-line">{item.details}</p>
+          </div>
+
+          {/* Image Section (only shown on md+ screens) */}
+          {item.images?.length > 0 && (
+            <div className="flex flex-col gap-12 w-72 hidden md:flex mt-6">
+              {item.images.slice(0, 2).map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`${item.institution} image ${i + 1}`}
+                  className="rounded-lg shadow-md border border-white/10 h-44 object-cover"
+                />
+              ))}
+            </div>
           )}
-        </h3>
-        <p className="text-skyBlue">{item.degree}</p>
-        <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
-        <p className="text-gray-300 whitespace-pre-line">{item.details}</p>
-
-        <div className="mt-4 flex gap-4">
-          {item.images?.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`${item.institution} campus ${idx + 1}`}
-              className="rounded-lg shadow-md border border-white/10 cursor-pointer"
-              style={{ width: '360px', height: '210px', objectFit: 'cover' }}
-
-            />
-          ))}
-
         </div>
-
       </div>
     </div>
   );
 }
+
 
 
 const educationData = [
@@ -168,7 +172,17 @@ const educationData = [
     degree: "BSc Computer Science – First Class Honours",
     duration: "2022 – 2025",
     details:
-      "Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development. Key modules: Machine Learning, Software Engineering, Mobile Development, NLP, Web Applications."
+      "Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development.\n\n" +
+      "Key modules and activities:\n" +
+      "- Machine Learning\n" +
+      "- Software Engineering\n" +
+      "- Mobile Development\n" +
+      "- Natural Language Processing (NLP)\n" +
+      "- Web Applications and Databases\n" +
+      "- Foundations of Computer Science\n" +
+      "- Systems and Architecture\n" +
+      "- User Experience (UX) Design\n" +
+      "- Undergraduate Individual Project"
   },
   {
     institution: "Stanmore College",
@@ -177,7 +191,16 @@ const educationData = [
     degree: "IT BTEC Extended Diploma (RQF), Computer Science – D*D*D*",
     duration: "2019 – 2022",
     details:
-      "Gained hands-on experience in full-stack development, cybersecurity, IT project management, and technical support."
+      "Gained hands-on experience in designing and developing full-stack applications, managing IT systems, and applying best practices in technical support, cybersecurity, and project delivery.\n\n" +
+      "Key modules and activities:\n" +
+      "- Cyber Security & Incident Management\n" +
+      "- Software Testing\n" +
+      "- Website & Mobile App Development\n" +
+      "- IT Project Management\n" +
+      "- Data Modelling\n" +
+      "- Programming\n" +
+      "- Cisco Networking\n" +
+      "- IT Services Delivery"
   }
 ];
 
