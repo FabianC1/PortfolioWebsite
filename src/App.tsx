@@ -36,33 +36,46 @@ function ProjectsSection() {
     {
       title: "PulseTechMobile",
       description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
-      url: "https://github.com/FabianC1/PulseTechMobile"
+      url: "https://github.com/FabianC1/PulseTechMobile",
+      icon: "/PulseTech.png"
     },
     {
       title: "Housing Price Prediction",
       description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
-      url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models"
+      url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models",
+      icon: "/python.png"
     },
     {
       title: "Lesson Booking System (Full Stack)",
       description: "A full stack JavaScript app enabling lesson booking with frontend and backend integration.",
-      url: "https://github.com/FabianC1/LessonBookingSystem-FullStack"
+      url: "https://github.com/FabianC1/LessonBookingSystem-FullStack",
+      icon: "/CulinaryCanvas.png"
     },
     {
       title: "Swim School Management System",
       description: "A Java desktop application managing swimming lessons, schedules, students, and instructor assignments effectively.",
-      url: "https://github.com/FabianC1/SwimSchool-Management-System"
+      url: "https://github.com/FabianC1/SwimSchool-Management-System",
+      icon: "/java.png" 
+    },
+    {
+      title: "PulseTech BackEnd",
+      description: "A backend service for PulseTech, built with Node.js and Express to manage API endpoints and database interactions.",
+      url: "https://github.com/FabianC1/PulseTech-BackEnd",
+      icon: "/PulseTech.png"
     },
     {
       title: "Supply Chain System Software",
       description: "A C++ group project implementing software solutions for efficient supply chain management.",
-      url: "https://github.com/FabianC1/Supply-Chain-System-Software"
+      url: "https://github.com/FabianC1/Supply-Chain-System-Software",
+      icon: "/c++.png" 
     },
     {
       title: "NLP Sentiment Analysis BiLSTM",
       description: "An NLP project analyzing sentiment using BiLSTM networks for improved text classification results.",
-      url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM"
+      url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM",
+      icon: "/python.png"
     }
+
   ];
 
 
@@ -76,10 +89,21 @@ function ProjectsSection() {
         className="flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
         style={{ scrollBehavior: 'auto', overflowY: 'hidden', height: 'auto' }}
       >
-        {projects.map(({ title, description, url }, index) => (
+        {projects.map(({ title, description, url, icon }, index) => (
           <div key={index} className="project-card snap-center shrink-0 w-96">
             <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
-              <h3 className="text-xl font-semibold mb-2 text-white cursor-default">{title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white cursor-default flex items-center gap-3">
+                <span>{title}</span>
+                {icon && (
+                  <img
+                    src={icon}
+                    alt={`${title} icon`}
+                    className="w-6 h-6 object-contain"
+                    loading="lazy"
+                  />
+                )}
+              </h3>
+
               <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
                 {description}
               </p>
@@ -88,13 +112,14 @@ function ProjectsSection() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-skyBlue hover:text-white  inline-flex items-center space-x-2 cursor-pointer"
+                  className="text-skyBlue hover:text-white inline-flex items-center space-x-2 cursor-pointer"
                 >
                   <span>View on GitHub</span>
                   <FaGithub className="text-xl" />
                 </a>
               </div>
             </div>
+
           </div>
         ))}
       </div>
@@ -102,6 +127,7 @@ function ProjectsSection() {
 
   );
 }
+
 
 function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -184,7 +210,7 @@ const educationData = [
       "- User Experience (UX) Design\n" +
       "- Undergraduate Individual Project - PulseTech"
   },
-  
+
   {
     institution: "Stanmore College",
     logo: "/stanmore.png",
