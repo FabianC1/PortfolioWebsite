@@ -131,13 +131,28 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
             <img
               src={item.logo}
               alt={`${item.institution} logo`}
-              className="w-6 h-6 object-contain"
+              className="w-10 h-10 object-contain"
             />
           )}
         </h3>
         <p className="text-gray-300">{item.degree}</p>
         <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
         <p className="text-gray-300 whitespace-pre-line">{item.details}</p>
+
+        <div className="mt-4 flex gap-4">
+          {item.images?.map((src, idx) => (
+            <img
+              key={idx}
+              src={src}
+              alt={`${item.institution} campus ${idx + 1}`}
+              className="rounded-lg shadow-md border border-white/10 cursor-pointer"
+              style={{ width: '360px', height: '210px', objectFit: 'cover' }}
+
+            />
+          ))}
+
+        </div>
+
       </div>
     </div>
   );
@@ -148,20 +163,23 @@ const educationData = [
   {
     institution: "Middlesex University",
     logo: "/mdx.png",
+    images: ["/mdx-building.jpg", "/mdx-building-2.jpg"],
     degree: "BSc Computer Science – First Class Honours",
     duration: "2022 – 2025",
     details:
-      "Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development. Key modules: Machine Learning, Software Engineering, Mobile Development, NLP, Web Applications. Final Year Avg: 18/20."
+      "Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development. Key modules: Machine Learning, Software Engineering, Mobile Development, NLP, Web Applications."
   },
   {
     institution: "Stanmore College",
     logo: "/stanmore.png",
+    images: ["/stanmore1.png", "/stanmore-2.webp"],
     degree: "IT BTEC Extended Diploma (RQF), Computer Science – D*D*D*",
     duration: "2019 – 2022",
     details:
       "Gained hands-on experience in full-stack development, cybersecurity, IT project management, and technical support."
   }
 ];
+
 
 
 
