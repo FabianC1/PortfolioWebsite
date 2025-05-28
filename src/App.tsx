@@ -88,7 +88,7 @@ function ProjectsSection() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-skyBlue hover:text-white underline inline-flex items-center space-x-2 cursor-pointer"
+                  className="text-skyBlue hover:text-white  inline-flex items-center space-x-2 cursor-pointer"
                 >
                   <span>View on GitHub</span>
                   <FaGithub className="text-xl" />
@@ -102,6 +102,70 @@ function ProjectsSection() {
 
   );
 }
+
+function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`relative pl-10 pb-12 transition-all duration-700 ease-in-out ${
+        visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+      }`}
+    >
+      <div className="absolute left-0 top-2 w-4 h-4 bg-purple-500 rounded-full border-2 border-white"></div>
+      <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-md">
+        <h3 className="text-xl font-semibold text-purple-300">{item.institution}</h3>
+        <p className="text-gray-300">{item.degree}</p>
+        <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
+        <p className="text-gray-300">{item.details}</p>
+      </div>
+    </div>
+  );
+}
+
+const educationData = [
+  {
+    institution: "Middlesex University",
+    degree: "BSc Computer Science",
+    duration: "2022 – 2025",
+    details:
+      "Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development.",
+  },
+  {
+    institution: "Stanmore College",
+    degree: "IT BTEC Extended Diploma (RQF), Computer Science",
+    duration: "2019 – 2022",
+    details:
+      "Gained hands-on experience in full-stack development, cybersecurity, IT project management, and technical support.",
+  },
+];
+
+function EducationSection() {
+  return (
+    <section id="education" className="max-w-4xl mx-auto py-20 px-6">
+      <h2 className="text-3xl font-bold text-purple-300 mb-10">Education</h2>
+      <div className="relative border-l-4 border-purple-500 pl-4">
+        {educationData.map((item, index) => (
+          <EducationTimelineItem key={index} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+
 
 
 
@@ -225,7 +289,7 @@ function App() {
       {/* Spacer to push content below fixed header */}
       <div className="h-16"></div>
 
-      {/* Sections (to be expanded) */}
+      {/* About section */}
       <section
         id="about"
         className="max-w-4xl mx-auto py-24 px-6 relative overflow-hidden"
@@ -267,31 +331,15 @@ function App() {
         </div>
       </section>
 
+      {/* Projects section */}
       <ProjectsSection />
 
+      {/* Education section */}
+      <EducationSection />
 
-      <section id="education" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-8">Education</h2>
-        <div className="space-y-6">
-          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
-            <h3 className="text-xl font-semibold">Middlesex University</h3>
-            <p className="text-gray-300 font-medium">Bachelor of Computer Science</p>
-            <p className="text-gray-300 mb-2">2022 - 2025 | Expected First Class Honours</p>
-            <p className="text-gray-300">
-              Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development.
-            </p>
-          </div>
-          <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-lg">
-            <h3 className="text-xl font-semibold">Stanmore College</h3>
-            <p className="text-gray-300 font-medium">IT BTEC Extended Diploma (RQF), Computer Science</p>
-            <p className="text-gray-300 mb-2">2019 - 2022 | Triple Distinction* (D*D*D*)</p>
-            <p className="text-gray-300">
-              Gained hands-on experience in full-stack development, cybersecurity, IT project management, and technical support.
-            </p>
-          </div>
-        </div>
-      </section>
 
+
+      {/* Contact section */}
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-4">Contact</h2>
         <p className="text-gray-300 mb-6">Feel free to reach out via email or connect on LinkedIn.</p>
