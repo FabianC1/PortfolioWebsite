@@ -184,11 +184,12 @@ const educationData = [
       "- User Experience (UX) Design\n" +
       "- Undergraduate Individual Project - PulseTech"
   },
+  
   {
     institution: "Stanmore College",
     logo: "/stanmore.png",
     images: ["/stanmore1.png", "/stanmore-2.webp"],
-    degree: "IT BTEC Extended Diploma (RQF), Computer Science – D*D*D*",
+    degree: "IT BTEC Extended Diploma (RQF) – D*D*D*",
     duration: "2019 – 2022",
     details:
       "Gained hands-on experience in designing and developing full-stack applications, managing IT systems, and applying best practices in technical support, cybersecurity, and project delivery.\n\n" +
