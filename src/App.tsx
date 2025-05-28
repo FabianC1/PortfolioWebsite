@@ -122,7 +122,8 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
       className={`relative pl-10 pb-12 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
         }`}
     >
-      <div className="absolute left-0 top-2 w-4 h-4 bg-purple-500 rounded-full border-2 border-white"></div>
+      <div className="absolute left-0 top-2 w-4 h-4 bg-skyBlue rounded-full border-2 border-white"></div>
+
 
       <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-md">
         <h3 className="text-xl font-semibold text-purple-300 flex items-center gap-3 mb-1">
@@ -135,7 +136,7 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
             />
           )}
         </h3>
-        <p className="text-gray-300">{item.degree}</p>
+        <p className="text-skyBlue">{item.degree}</p>
         <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
         <p className="text-gray-300 whitespace-pre-line">{item.details}</p>
 
