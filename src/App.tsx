@@ -145,7 +145,7 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
 
           {/* Image Section (only shown on md+ screens) */}
           {item.images?.length > 0 && (
-            <div className="flex flex-col gap-12 w-72 hidden md:flex mt-6">
+            <div className="md:flex flex-col gap-12 w-72 hidden mt-6">
               {item.images.slice(0, 2).map((src, i) => (
                 <img
                   key={i}
