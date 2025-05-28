@@ -86,9 +86,10 @@ function ProjectsSection() {
 
       <div
         ref={scrollRef}
-        className="flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
+        className="w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
         style={{ scrollBehavior: 'auto', overflowY: 'hidden', height: 'auto' }}
       >
+
         {projects.map(({ title, description, url, icon }, index) => (
           <div key={index} className="project-card snap-center shrink-0 w-96">
             <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
