@@ -242,8 +242,8 @@ function App() {
           />
 
           <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-            I am Fabian Galasel, an aspiring software, web, and mobile developer with a passion for building impactful applications.
-            I recently graduated with a BSc in Computer Science from Middlesex University. I'm now looking for a role where I can grow—putting in the time to master new technologies
+            I am Fabian, an aspiring software, web, and mobile developer with a passion for building impactful applications.
+            I recently graduated with a BSc in Computer Science from Middlesex University. I'm looking for a role where I can grow—putting in the time to master new technologies
             and continuously push myself to the next level.
           </p>
 
