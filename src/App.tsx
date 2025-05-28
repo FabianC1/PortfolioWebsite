@@ -55,7 +55,7 @@ function ProjectsSection() {
       title: "Swim School Management System",
       description: "A Java desktop application managing swimming lessons, schedules, students, and instructor assignments effectively.",
       url: "https://github.com/FabianC1/SwimSchool-Management-System",
-      icon: "/java.png" 
+      icon: "/java.png"
     },
     {
       title: "PulseTech BackEnd",
@@ -67,7 +67,7 @@ function ProjectsSection() {
       title: "Supply Chain System Software",
       description: "A C++ group project implementing software solutions for efficient supply chain management.",
       url: "https://github.com/FabianC1/Supply-Chain-System-Software",
-      icon: "/c++.png" 
+      icon: "/c++.png"
     },
     {
       title: "NLP Sentiment Analysis BiLSTM",
@@ -339,28 +339,42 @@ function App() {
             <h1 className="text-4xl md:text-5xl font-extrabold">Fabian Galasel</h1>
             <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">Aspiring Software, Web & Mobile Developer</p>
 
-            <div className="mt-10 flex space-x-4 justify-center md:justify-start">
+            <div className="mt-10 flex flex-col items-center md:items-start space-y-4">
+              {/* GitHub and LinkedIn side-by-side */}
+              <div className="flex space-x-4">
+                <a
+                  href="https://github.com/FabianC1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-3000"
+                  aria-label="GitHub"
+                >
+                  <FaGithub className="text-2xl" />
+                  <span className="font-medium">GitHub</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/fabian-galasel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-3000"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin className="text-2xl" />
+                  <span className="font-medium">LinkedIn</span>
+                </a>
+              </div>
+
+              {/* Download CV button centered between GitHub and LinkedIn */}
               <a
-                href="https://github.com/FabianC1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-300"
-                aria-label="GitHub"
+                href="/Fabian_Galasel_CV.pdf"
+                download
+                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-3000"
+                style={{ marginLeft: '52px' }} // manually adjust for better visual centering
               >
-                <FaGithub className="text-2xl" />
-                <span className="font-medium">GitHub</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/fabian-galasel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full transition duration-300"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="text-2xl" />
-                <span className="font-medium">LinkedIn</span>
+                <span className="font-medium">Download CV</span>
               </a>
             </div>
+
 
           </div>
 
@@ -429,6 +443,8 @@ function App() {
         <a href="mailto:galaselfabian@gmail.com" className="text-skyBlue hover:text-neonPurple underline">
           galaselfabian@gmail.com
         </a>
+        <p className="text-gray-300 mb-1">Phone: <span className="text-skyBlue">+44 7123 456 789</span></p>
+
       </section>
 
       {/* Footer */}
