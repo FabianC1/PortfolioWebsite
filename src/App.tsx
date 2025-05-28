@@ -169,7 +169,7 @@ const educationData = [
     institution: "Middlesex University",
     logo: "/mdx.png",
     images: ["/mdx-building.jpg", "/mdx-building-2.jpg"],
-    degree: "BSc Computer Science – First Class Honours",
+    degree: "BSc Computer Science – Expected First Class Honours",
     duration: "2022 – 2025",
     details:
       "Focused on software development, full stack engineering, and user-centered design. Gained practical experience in programming, web technologies, software engineering, and mobile app development.\n\n" +
@@ -182,7 +182,7 @@ const educationData = [
       "- Foundations of Computer Science\n" +
       "- Systems and Architecture\n" +
       "- User Experience (UX) Design\n" +
-      "- Undergraduate Individual Project"
+      "- Undergraduate Individual Project - PulseTech"
   },
   {
     institution: "Stanmore College",
