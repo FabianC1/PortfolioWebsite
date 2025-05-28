@@ -480,7 +480,7 @@ function App() {
         <img
           src="/Signature.png"
           alt="Fabian Galasel Signature"
-          className="h-20 filter invert contrast-200 brightness-200"
+          className="h-20 filter  contrast-200 brightness-200"
         />
       </footer>
 
