@@ -138,7 +138,7 @@ function ProjectsSection() {
     return () => container.removeEventListener('wheel', handleWheel);
   }, []);
 
-const projects = [
+  const projects = [
     {
       title: "PulseTechMobile",
       description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
@@ -334,16 +334,15 @@ function App() {
               <a
                 href="/Fabian_Galasel_CV.pdf"
                 download
-                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full"
-                style={{ marginLeft: '52px' }}
+                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full md:ml-[52px] mx-auto md:mx-0"
               >
                 <span className="font-medium">Download CV</span>
               </a>
+
             </div>
           </div>
         </div>
       </header>
-
 
 
       {/* Spacer to push content below fixed header */}
