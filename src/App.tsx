@@ -8,6 +8,8 @@ import './App.css';
 function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,21 +43,37 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
             </h3>
             <p className="text-skyBlue">{item.degree}</p>
             <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
-            <p className="text-gray-300 whitespace-pre-line">{item.details}</p>
+            {/** Mobile collapsible block */}
+            <div className="block md:hidden">
+              <details
+                className="text-gray-300 whitespace-pre-line cursor-pointer"
+                onToggle={(e) => setExpanded(e.currentTarget.open)}
+              >
+                <summary className="text-skyBlue underline mb-2">
+                  {expanded ? "Less Details" : "More Details"}
+                </summary>
+                <p>{item.details}</p>
+              </details>
+            </div>
+
+            {/** Desktop always expanded */}
+            <p className="hidden md:block text-gray-300 whitespace-pre-line">{item.details}</p>
+
           </div>
 
           {/* Images on md+ screens */}
           {item.images?.length > 0 && (
-            <div className="md:flex flex-col gap-12 w-72 hidden mt-6">
-              {item.images.slice(0, 2).map((src, i) => (
+            <div className="flex flex-col gap-6 w-full md:w-72 mt-6">
+              {item.images?.slice(0, 2).map((src, i) => (
                 <img
                   key={i}
                   src={src}
                   alt={`${item.institution} image ${i + 1}`}
-                  className="rounded-lg shadow-md border border-white/10 h-44 object-cover"
+                  className="rounded-lg shadow-md border border-white/10 h-44 object-cover w-full max-w-md mx-auto md:mx-0"
                 />
               ))}
             </div>
+
           )}
         </div>
       </div>
@@ -185,64 +203,64 @@ function ProjectsSection() {
 
 
   return (
-  <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
-    <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
+    <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
+      <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
 
-    {/* Scroll instructions */}
-    <p className="text-center text-sm text-gray-400 mb-4 md:hidden">
-      Swipe left/right to explore →
-    </p>
-    <p className="text-center text-sm text-gray-400 mb-4 hidden md:block">
-      Scroll horizontally to view more projects →
-    </p>
+      {/* Scroll instructions */}
+      <p className="text-center text-sm text-gray-400 mb-4 md:hidden">
+        ← Swipe left/right to explore →
+      </p>
+      <p className="text-center text-sm text-gray-400 mb-4 hidden md:block">
+        Scroll horizontally to view more projects →
+      </p>
 
-    {/* Scroll container with gradient edges */}
-    <div className="relative">
-      {/* Left gradient */}
-      <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-charcoalBlack to-transparent pointer-events-none z-10" />
-      {/* Right gradient */}
-      <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-charcoalBlack to-transparent pointer-events-none z-10" />
+      {/* Scroll container with gradient edges */}
+      <div className="relative">
+        {/* Left gradient */}
+        <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-charcoalBlack to-transparent pointer-events-none z-10" />
+        {/* Right gradient */}
+        <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-charcoalBlack to-transparent pointer-events-none z-10" />
 
-      <div
-        ref={scrollRef}
-        className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
-        style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
-      >
-        {projects.map(({ title, description, url, icon }, index) => (
-          <div key={index} className="project-card snap-center shrink-0 w-96">
-            <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
-              <h3 className="text-xl font-semibold mb-2 text-white cursor-default flex items-center gap-3">
-                <span>{title}</span>
-                {icon && (
-                  <img
-                    src={icon}
-                    alt={`${title} icon`}
-                    className="w-6 h-6 object-contain"
-                    loading="lazy"
-                  />
-                )}
-              </h3>
-              <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
-                {description}
-              </p>
-              <div className="mt-auto">
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-skyBlue hover:text-white inline-flex items-center space-x-2 cursor-pointer"
-                >
-                  <span>View on GitHub</span>
-                  <FaGithub className="text-xl" />
-                </a>
+        <div
+          ref={scrollRef}
+          className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
+          style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
+        >
+          {projects.map(({ title, description, url, icon }, index) => (
+            <div key={index} className="project-card snap-center shrink-0 w-96">
+              <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
+                <h3 className="text-xl font-semibold mb-2 text-white cursor-default flex items-center gap-3">
+                  <span>{title}</span>
+                  {icon && (
+                    <img
+                      src={icon}
+                      alt={`${title} icon`}
+                      className="w-6 h-6 object-contain"
+                      loading="lazy"
+                    />
+                  )}
+                </h3>
+                <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
+                  {description}
+                </p>
+                <div className="mt-auto">
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-skyBlue hover:text-white inline-flex items-center space-x-2 cursor-pointer"
+                  >
+                    <span>View on GitHub</span>
+                    <FaGithub className="text-xl" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 
 }
 
