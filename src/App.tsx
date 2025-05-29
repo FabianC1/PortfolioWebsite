@@ -211,7 +211,7 @@ function ProjectsSection() {
         ← Swipe left/right to explore →
       </p>
       <p className="text-center text-sm text-gray-400 mb-4 hidden md:block">
-        Scroll horizontally to view more projects →
+        ← Scroll horizontally to view more projects →
       </p>
 
       {/* Scroll container with gradient edges */}
