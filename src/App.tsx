@@ -185,12 +185,27 @@ function ProjectsSection() {
 
 
   return (
-    <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
-      <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
+  <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
+    <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
+
+    {/* Scroll instructions */}
+    <p className="text-center text-sm text-gray-400 mb-4 md:hidden">
+      Swipe left/right to explore →
+    </p>
+    <p className="text-center text-sm text-gray-400 mb-4 hidden md:block">
+      Scroll horizontally to view more projects →
+    </p>
+
+    {/* Scroll container with gradient edges */}
+    <div className="relative">
+      {/* Left gradient */}
+      <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-charcoalBlack to-transparent pointer-events-none z-10" />
+      {/* Right gradient */}
+      <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-charcoalBlack to-transparent pointer-events-none z-10" />
 
       <div
         ref={scrollRef}
-        className="w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
+        className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
         style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
       >
         {projects.map(({ title, description, url, icon }, index) => (
@@ -225,8 +240,10 @@ function ProjectsSection() {
           </div>
         ))}
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
+
 }
 
 function App() {
