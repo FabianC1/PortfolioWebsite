@@ -1,133 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { useRef, useEffect, useState } from "react";
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import './index.css';
 import './App.css';
-
-
-
-function ProjectsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-
-      // Smooth horizontal scroll with a slightly boosted delta for better feel
-      container.scrollBy({
-        left: e.deltaY * 1.2,
-        behavior: 'smooth',
-      });
-    };
-
-    container.addEventListener('wheel', handleWheel, { passive: false });
-
-    return () => {
-      container.removeEventListener('wheel', handleWheel);
-    };
-  }, []);
-
-
-
-  const projects = [
-    {
-      title: "PulseTechMobile",
-      description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
-      url: "https://github.com/FabianC1/PulseTechMobile",
-      icon: "/PulseTech.png"
-    },
-    {
-      title: "Housing Price Prediction",
-      description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
-      url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models",
-      icon: "/python.png"
-    },
-    {
-      title: "Lesson Booking System (Full Stack)",
-      description: "A full stack JavaScript app enabling lesson booking with frontend and backend integration.",
-      url: "https://github.com/FabianC1/LessonBookingSystem-FullStack",
-      icon: "/CulinaryCanvas.png"
-    },
-    {
-      title: "Swim School Management System",
-      description: "A Java desktop application managing swimming lessons, schedules, students, and instructor assignments effectively.",
-      url: "https://github.com/FabianC1/SwimSchool-Management-System",
-      icon: "/java.png"
-    },
-    {
-      title: "PulseTech BackEnd",
-      description: "A backend service for PulseTech, built with Node.js and Express to manage API endpoints and database interactions.",
-      url: "https://github.com/FabianC1/PulseTech-BackEnd",
-      icon: "/PulseTech.png"
-    },
-    {
-      title: "Supply Chain System Software",
-      description: "A C++ group project implementing software solutions for efficient supply chain management.",
-      url: "https://github.com/FabianC1/Supply-Chain-System-Software",
-      icon: "/c++.png"
-    },
-    {
-      title: "NLP Sentiment Analysis BiLSTM",
-      description: "An NLP project analyzing sentiment using BiLSTM networks for improved text classification results.",
-      url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM",
-      icon: "/python.png"
-    }
-
-  ];
-
-
-
-  return (
-    <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
-      <h2 className="text-3xl font-bold text-purple-300 mb-8">Projects</h2>
-
-      <div
-        ref={scrollRef}
-        className="w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
-        style={{ scrollBehavior: 'auto', overflowY: 'hidden', height: 'auto' }}
-      >
-
-        {projects.map(({ title, description, url, icon }, index) => (
-          <div key={index} className="project-card snap-center shrink-0 w-96">
-            <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
-              <h3 className="text-xl font-semibold mb-2 text-white cursor-default flex items-center gap-3">
-                <span>{title}</span>
-                {icon && (
-                  <img
-                    src={icon}
-                    alt={`${title} icon`}
-                    className="w-6 h-6 object-contain"
-                    loading="lazy"
-                  />
-                )}
-              </h3>
-
-              <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
-                {description}
-              </p>
-              <div className="mt-auto">
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-skyBlue hover:text-white inline-flex items-center space-x-2 cursor-pointer"
-                >
-                  <span>View on GitHub</span>
-                  <FaGithub className="text-xl" />
-                </a>
-              </div>
-            </div>
-
-          </div>
-        ))}
-      </div>
-    </section>
-
-  );
-}
 
 
 function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
@@ -153,7 +28,6 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
 
       <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-md">
         <div className="flex flex-col md:flex-row gap-6">
-          {/* Text Section */}
           <div className="flex-1">
             <h3 className="text-xl font-semibold text-purple-300 flex items-center gap-3 mb-1">
               <span>{item.institution}</span>
@@ -170,7 +44,7 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
             <p className="text-gray-300 whitespace-pre-line">{item.details}</p>
           </div>
 
-          {/* Image Section (only shown on md+ screens) */}
+          {/* Images on md+ screens */}
           {item.images?.length > 0 && (
             <div className="md:flex flex-col gap-12 w-72 hidden mt-6">
               {item.images.slice(0, 2).map((src, i) => (
@@ -188,8 +62,6 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
     </div>
   );
 }
-
-
 
 const educationData = [
   {
@@ -232,13 +104,10 @@ const educationData = [
   }
 ];
 
-
-
-
 function EducationSection() {
   return (
     <section id="education" className="max-w-4xl mx-auto py-20 px-6">
-      <h2 className="text-3xl font-bold text-purple-300 mb-10">Education</h2>
+      <h2 className="text-3xl font-bold text-purple-300 mb-10 text-center md:text-left">Education</h2>
       <div className="relative border-l-4 border-purple-500 pl-4">
         {educationData.map((item, index) => (
           <EducationTimelineItem key={index} item={item} />
@@ -249,9 +118,116 @@ function EducationSection() {
 }
 
 
+function ProjectsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      container.scrollBy({
+        left: e.deltaY * 1.2,
+        behavior: 'smooth',
+      });
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, []);
+
+const projects = [
+    {
+      title: "PulseTechMobile",
+      description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
+      url: "https://github.com/FabianC1/PulseTechMobile",
+      icon: "/PulseTech.png"
+    },
+    {
+      title: "Housing Price Prediction",
+      description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
+      url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models",
+      icon: "/python.png"
+    },
+    {
+      title: "Lesson Booking System (Full Stack)",
+      description: "A full stack JavaScript app enabling lesson booking with frontend and backend integration.",
+      url: "https://github.com/FabianC1/LessonBookingSystem-FullStack",
+      icon: "/CulinaryCanvas.png"
+    },
+    {
+      title: "Swim School Management System",
+      description: "A Java desktop application managing swimming lessons, schedules, students, and instructor assignments effectively.",
+      url: "https://github.com/FabianC1/SwimSchool-Management-System",
+      icon: "/java.png"
+    },
+    {
+      title: "PulseTech BackEnd",
+      description: "A backend service for PulseTech, built with Node.js and Express to manage API endpoints and database interactions.",
+      url: "https://github.com/FabianC1/PulseTech-BackEnd",
+      icon: "/PulseTech.png"
+    },
+    {
+      title: "Supply Chain System Software",
+      description: "A C++ group project implementing software solutions for efficient supply chain management.",
+      url: "https://github.com/FabianC1/Supply-Chain-System-Software",
+      icon: "/c++.png"
+    },
+    {
+      title: "NLP Sentiment Analysis BiLSTM",
+      description: "An NLP project analyzing sentiment using BiLSTM networks for improved text classification results.",
+      url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM",
+      icon: "/python.png"
+    }
+  ];
 
 
+  return (
+    <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
+      <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
 
+      <div
+        ref={scrollRef}
+        className="w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
+        style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
+      >
+        {projects.map(({ title, description, url, icon }, index) => (
+          <div key={index} className="project-card snap-center shrink-0 w-96">
+            <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
+              <h3 className="text-xl font-semibold mb-2 text-white cursor-default flex items-center gap-3">
+                <span>{title}</span>
+                {icon && (
+                  <img
+                    src={icon}
+                    alt={`${title} icon`}
+                    className="w-6 h-6 object-contain"
+                    loading="lazy"
+                  />
+                )}
+              </h3>
+              <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
+                {description}
+              </p>
+              <div className="mt-auto">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-skyBlue hover:text-white inline-flex items-center space-x-2 cursor-pointer"
+                >
+                  <span>View on GitHub</span>
+                  <FaGithub className="text-xl" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function App() {
 
@@ -272,15 +248,14 @@ function App() {
       setModalImageSrc(null);
     }, 300);
   };
-
-
   return (
-    <div className="min-h-screen bg-charcoalBlack text-white font-sans">
+    <div className="min-h-screen bg-charcoalBlack text-white font-sans w-full overflow-x-hidden">
 
       {/* Transparent Header */}
       <header
-        className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
+        className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center flex-wrap bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
       >
+
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
         <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
           <a href="#about" className="hover:text-white transition">About</a>
@@ -290,65 +265,57 @@ function App() {
         </nav>
       </header>
 
+      {/* Hero Section */}
+      <header className="flex items-center justify-center min-h-[60vh] bg-darkPurple px-6">
+        <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 pt-52">
+          {/* Profile Image */}
+          <div
+            onClick={() => handleImageClick("/pfp.jpg")}
+            className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg w-40 h-40 md:w-[25rem] md:h-[24rem]"
+          >
+            <img
+              src="/pfp.jpg"
+              alt="Fabian Galasel"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-      <header className="flex items-center justify-center min-h-[60vh] pl-32 pr-30 bg-darkPurple">
-        <div className="flex flex-col md:flex-row items-center max-w-5xl w-full gap-12 ml-24 pt-52">
 
-          <>
-            {/* Profile Image */}
+          {/* Modal */}
+          {isModalOpen && modalImageSrc && (
             <div
-              onClick={() => handleImageClick("/pfp.jpg")}
-              className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg"
-              style={{ width: '25rem', height: '24rem' }}
+              className={`fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'
+                }`}
+              onClick={handleCloseModal}
             >
-              <img
-                src="/pfp.jpg"
-                alt="Fabian Galasel"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Modal */}
-            {isModalOpen && modalImageSrc && (
               <div
-                className={`fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50
-      transition-opacity duration-300
-      ${isAnimating ? 'opacity-100' : 'opacity-0'}
-      `}
-                onClick={handleCloseModal}
+                className={`w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg border-2 border-white transform transition-transform duration-300 ${isAnimating ? 'scale-100' : 'scale-90'
+                  }`}
+                onClick={(e) => e.stopPropagation()}
               >
-                <div
-                  className={`w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg border-2 border-white
-        transform transition-transform duration-300
-        ${isAnimating ? 'scale-100' : 'scale-90'}
-        `}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <img
-                    src={modalImageSrc}
-                    alt="Fabian Galasel Large"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+                <img
+                  src={modalImageSrc}
+                  alt="Fabian Galasel Large"
+                  className="w-full h-full object-contain"
+                />
               </div>
-            )}
-          </>
+            </div>
+          )}
 
-
-          {/* Name, Title, and Social Links */}
+          {/* Text + Socials */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-extrabold">Fabian Galasel</h1>
-            <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">Aspiring Software, Web & Mobile Developer</p>
+            <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">
+              Aspiring Software, Web & Mobile Developer
+            </p>
 
             <div className="mt-10 flex flex-col items-center md:items-start space-y-4">
-              {/* GitHub and LinkedIn side-by-side */}
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/FabianC1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full "
-                  aria-label="GitHub"
+                  className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full"
                 >
                   <FaGithub className="text-2xl" />
                   <span className="font-medium">GitHub</span>
@@ -358,76 +325,68 @@ function App() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full"
-                  aria-label="LinkedIn"
                 >
                   <FaLinkedin className="text-2xl" />
                   <span className="font-medium">LinkedIn</span>
                 </a>
               </div>
 
-              {/* Download CV button centered between GitHub and LinkedIn */}
               <a
                 href="/Fabian_Galasel_CV.pdf"
                 download
-                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full "
-                style={{ marginLeft: '52px' }} // manually adjust for better visual centering
+                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full"
+                style={{ marginLeft: '52px' }}
               >
                 <span className="font-medium">Download CV</span>
               </a>
             </div>
-
-
           </div>
-
         </div>
       </header>
 
 
 
       {/* Spacer to push content below fixed header */}
-      <div className="h-16"></div>
+      <div className="h-24"></div>
 
       {/* About section */}
-      <section
-        id="about"
-        className="max-w-4xl mx-auto py-24 px-6 relative overflow-hidden"
-      >
-        <h2 className="text-3xl font-bold text-purple-300 mb-6">About Me</h2>
+      <div className="w-full overflow-x-hidden">
+        <section
+          id="about"
+          className="max-w-4xl mx-auto py-24 px-6 relative"
+        >
+          <h2 className="text-3xl font-bold text-purple-300 mb-6 text-center md:text-left">About Me</h2>
 
-        {/* Picture and description side by side */}
-        <div className="flex gap-16 items-start">
-          <img
-            src="/image2.jpg"
-            alt="Fabian Galasel"
-            className="w-40 h-40 rounded-full border-2 border-purple-500 hover:opacity-100 transition-opacity flex-shrink-0 mt-6 cursor-default"
-            style={{ objectFit: "cover" }}
-          />
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <img
+              src="/image2.jpg"
+              alt="Fabian Galasel"
+              className="w-40 h-40 rounded-full border-2 border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
+            />
+            <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
+              I am Fabian, an aspiring software, web, and mobile developer with a passion for building impactful applications.
+              I recently graduated with a BSc in Computer Science from Middlesex University. I'm looking for a role where I can grow—putting in the time to master new technologies
+              and continuously push myself to the next level.
+            </p>
+          </div>
 
-          <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-            I am Fabian, an aspiring software, web, and mobile developer with a passion for building impactful applications.
-            I recently graduated with a BSc in Computer Science from Middlesex University. I'm looking for a role where I can grow—putting in the time to master new technologies
-            and continuously push myself to the next level.
-          </p>
-
-        </div>
-
-        {/* Skills row below, centered */}
-        <div className="flex flex-wrap justify-center gap-3 mt-8 max-w-4xl mx-auto">
-          {[
-            "TypeScript", "Bash", "JavaScript", "HTML5", "CSS3",
-            "React", "React Native", "Node.js", "Express.js", "Python",
-            "Kotlin", "Racket", "Postman", "C++", "Java",
-            "Vue.js", "React Navigation", "MongoDB"
-          ].map((tech) => (
-            <span
-              key={tech}
-              className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </section>
+          <div className="flex flex-wrap justify-center gap-3 mt-8 max-w-4xl mx-auto">
+            {[
+              "TypeScript", "Bash", "JavaScript", "HTML5", "CSS3",
+              "React", "React Native", "Node.js", "Express.js", "Python",
+              "Kotlin", "Racket", "Postman", "C++", "Java",
+              "Vue.js", "React Navigation", "MongoDB"
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* Projects section */}
       <ProjectsSection />
@@ -436,10 +395,8 @@ function App() {
       <EducationSection />
 
 
-
-      {/* Contact section */}
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-8">Contact</h2>
+        <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Contact</h2>
         <p className="text-gray-300 mb-8">
           Feel free to reach out via email or phone. I'm open to opportunities and happy to connect!
         </p>
@@ -474,14 +431,12 @@ function App() {
         </div>
       </section>
 
-
-      {/* Footer */}
       <footer className="text-center py-6 text-sm text-white/50 flex items-center justify-center space-x-2">
         <span>&copy; {new Date().getFullYear()} Fabian Galasel</span>
         <img
           src="/Signature.png"
           alt="Fabian Galasel Signature"
-          className="h-20 filter  contrast-200 brightness-200"
+          className="h-20 filter contrast-200 brightness-200"
         />
       </footer>
 
