@@ -367,7 +367,7 @@ function App() {
               </div>
 
               <a
-                href="/Fabian_Galasel_CV.pdf"
+                href="/Fabian Galasel CV.pdf"
                 download
                 className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full md:ml-[52px] mx-auto md:mx-0"
               >
