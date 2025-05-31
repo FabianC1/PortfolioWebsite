@@ -209,7 +209,6 @@ function ProjectsSection() {
   ];
 
 
-
   return (
     <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
       <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
@@ -276,12 +275,10 @@ function ProjectsSection() {
                   </div>
                 )}
 
-
               </div>
             </div>
           ))}
         </div>
-
 
       </div>
     </section>
