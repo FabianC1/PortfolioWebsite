@@ -10,6 +10,8 @@ export default {
         softBlack: '#0a0a0a',
         jet: '#343434',
         skyBlue: '#00BFFF',
+        lightPurple: '#d3bcff',
+        pastelBlue: '#93c5fd',
 
         // Modern accent colors
         electricBlue: '#7DF9FF',

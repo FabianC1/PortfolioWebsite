@@ -8,14 +8,15 @@ export const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className={`
-        p-2 rounded-full transition-all duration-300 ease-in-out
-        ${theme === 'dark' 
-          ? 'bg-purple-300 text-charcoalBlack hover:bg-purple-200' 
-          : 'bg-purple-700 text-white hover:bg-purple-600'}
-        focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
-        transform hover:scale-110
-      `}
+className={`
+  p-2 rounded-full transition-all duration-300 ease-in-out
+  ${theme === 'dark' 
+    ? 'bg-purple-300 text-charcoalBlack hover:bg-purple-200' 
+    : 'bg-pastelBlue text-white hover:bg-pastelBlue'}
+  focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2
+  transform hover:scale-110
+`}
+
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (

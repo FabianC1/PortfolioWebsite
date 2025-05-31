@@ -1,6 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { FaGithub } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 import './index.css';
 import './App.css';
@@ -324,11 +323,14 @@ function App() {
 
       {/* Transparent Header */}
       <header
-        className="fixed top-0 w-full z-50 px-6 py-6 flex flex-wrap justify-between items-center bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
+        className="fixed top-0 w-full z-50 px-6 py-6 flex flex-wrap justify-between items-center 
+           bg-[rgba(191,201,221,0.62)] dark:bg-[rgba(18,18,31,0.45)] 
+           backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
       >
+
         {/* Top row: Name and ThemeToggle */}
         <div className="w-full flex justify-between items-center sm:w-auto">
-          <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
+          <h1 className="text-2xl font-bold text-charcoalBlack dark:text-lightPurple">Fabian Galasel</h1>
           <div className="sm:hidden">
             <ThemeToggle />
           </div>
@@ -336,11 +338,13 @@ function App() {
 
         {/* Bottom row: Navigation and ThemeToggle on desktop */}
         <div className="w-full flex justify-between items-center mt-4 sm:mt-0 sm:gap-6 sm:w-auto">
-          <nav className="w-full sm:w-auto text-sm sm:text-base uppercase tracking-wide text-purple-200 flex justify-center sm:justify-start gap-x-3 sm:gap-x-6 flex-wrap">
-            <a href="#about" className="hover:text-white transition">About</a>
-            <a href="#projects" className="hover:text-white transition">Projects</a>
-            <a href="#education" className="hover:text-white transition">Education</a>
-            <a href="#contact" className="hover:text-white transition">Contact</a>
+          <nav className="w-full sm:w-auto text-sm sm:text-base uppercase tracking-wide 
+                    text-charcoalBlack dark:text-lightPurple 
+                    flex justify-center sm:justify-start gap-x-3 sm:gap-x-6 flex-wrap">
+            <a href="#about" className="hover:text-skyBlue dark:hover:text-white transition">About</a>
+            <a href="#projects" className="hover:text-skyBlue dark:hover:text-white transition">Projects</a>
+            <a href="#education" className="hover:text-skyBlue dark:hover:text-white transition">Education</a>
+            <a href="#contact" className="hover:text-skyBlue dark:hover:text-white transition">Contact</a>
           </nav>
 
           <div className="hidden sm:block">
@@ -348,7 +352,6 @@ function App() {
           </div>
         </div>
       </header>
-
 
 
       {/* Hero Section */}
@@ -397,7 +400,7 @@ function App() {
           {/* Text + Socials */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-extrabold">Fabian Galasel</h1>
-            <p className="text-xl md:text-2xl mt-2 font-light text-skyBlue">
+            <p className="text-xl md:text-2xl mt-2 font-light text-charcoalBlack dark:text-skyBlue">
               Aspiring Software, Web & Mobile Developer
             </p>
 
@@ -422,12 +425,26 @@ function App() {
                   <span className="font-medium">LinkedIn</span>
                 </a>
               </div>
-
               <a
                 href="/Fabian Galasel CV.pdf"
                 download
-                className="slide-bg flex items-center space-x-2 border border-white text-skyBlue px-4 py-2 rounded-full md:ml-[52px] mx-auto md:mx-0"
+                className="group slide-bg flex items-center space-x-2 border border-white text-charcoalBlack dark:text-skyBlue px-4 py-2 rounded-full md:ml-[52px] mx-auto md:mx-0 transition-colors duration-300"
               >
+                <span className="w-5 h-5 transition duration-300 text-black dark:text-skyBlue group-hover:text-white">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-full h-full"
+                  >
+                    <path d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" />
+                  </svg>
+                </span>
+
+
                 <span className="font-medium">Download CV</span>
               </a>
 

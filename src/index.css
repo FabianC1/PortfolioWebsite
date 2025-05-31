@@ -11,24 +11,34 @@ html, body, #root {
   
 }
 
-
-
 .slide-bg {
-  background: linear-gradient(
-    to right,
-    rgb(131, 89, 228) 50%,   
-    transparent 50% 
-  );
   background-size: 200% 100%;
-  background-position: right bottom; 
-  border: 2px solid white;
-  color: #0ea5e9;
-  transition: background-position 0.3s ease, color 0.3s ease;
+  background-position: right bottom;
   background-repeat: no-repeat;
+  transition: background-position 0.3s ease, color 0.3s ease, border 0.3s ease;
+
+  /* Light mode styles */
+  color: rgb(17 24 39); /* charcoalBlack */
+  border: 2px solid rgb(17 24 39); /* charcoalBlack */
+  background-image: linear-gradient(
+    to right,
+    rgb(147, 197, 253) 50%, /* skyBlue-300 */
+    transparent 50%
+  );
+}
+
+.dark .slide-bg {
+  color: #0ea5e9; /* skyBlue */
+  border: 2px solid white;
+  background-image: linear-gradient(
+    to right,
+    rgb(131, 89, 228) 50%,  /* neon purple */
+    transparent 50%
+  );
 }
 
 .slide-bg:hover {
-  background-position: left bottom; 
+  background-position: left bottom;
   color: white !important;
 }
 
