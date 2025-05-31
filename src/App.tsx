@@ -237,7 +237,7 @@ function ProjectsSection() {
           {projects.map(({ title, description, url, icon, extraInfo }, index) => (
             <div key={index} className="project-card snap-center shrink-0 w-[calc(100vw-3rem)] sm:w-96">
 
-              <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col justify-between h-full">
+              <div className="project-card-content p-6 rounded-lg shadow-lg bg-inherit text-inherit flex flex-col justify-between h-full">
 
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2 text-white cursor-default">
@@ -273,7 +273,7 @@ function ProjectsSection() {
                 {/* Extra info appears after animation completes */}
                 {extraInfo && (
                   <div className="project-extra">
-                    <p className="text-gray-400 text-sm">{extraInfo}</p>
+                    <p className="text-gray-700 dark:text-white text-sm">{extraInfo}</p>
                   </div>
                 )}
 
@@ -324,22 +324,31 @@ function App() {
 
       {/* Transparent Header */}
       <header
-        className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center flex-wrap bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
+        className="fixed top-0 w-full z-50 px-6 py-6 flex flex-wrap justify-between items-center bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
       >
-        <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
+        {/* Top row: Name and ThemeToggle */}
+        <div className="w-full flex justify-between items-center sm:w-auto">
+          <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
+          <div className="sm:hidden">
+            <ThemeToggle />
+          </div>
+        </div>
 
-        <div className="flex items-center gap-6">
-          <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
+        {/* Bottom row: Navigation and ThemeToggle on desktop */}
+        <div className="w-full flex justify-between items-center mt-4 sm:mt-0 sm:gap-6 sm:w-auto">
+          <nav className="w-full sm:w-auto text-sm sm:text-base uppercase tracking-wide text-purple-200 flex justify-center sm:justify-start gap-x-3 sm:gap-x-6 flex-wrap">
             <a href="#about" className="hover:text-white transition">About</a>
             <a href="#projects" className="hover:text-white transition">Projects</a>
             <a href="#education" className="hover:text-white transition">Education</a>
             <a href="#contact" className="hover:text-white transition">Contact</a>
           </nav>
 
-          {/* Theme toggle button */}
-          <ThemeToggle />
+          <div className="hidden sm:block">
+            <ThemeToggle />
+          </div>
         </div>
       </header>
+
 
 
       {/* Hero Section */}

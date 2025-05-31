@@ -23,6 +23,7 @@ export default {
         slate: '#708090',
         arctic: '#E0FFFF',
         neonPurple: '#BF40FF',
+        white: '#FFFFFF',
       }
     },
     
