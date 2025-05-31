@@ -217,32 +217,40 @@ function ProjectsSection() {
       {/* Scroll container with gradient edges */}
       <div className="relative">
         {/* Left gradient */}
-        <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-charcoalBlack to-transparent pointer-events-none z-10" />
+        <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r  pointer-events-none z-10" />
         {/* Right gradient */}
-        <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-charcoalBlack to-transparent pointer-events-none z-10" />
+        <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l pointer-events-none z-10" />
 
         <div
           ref={scrollRef}
-          className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 whitespace-nowrap scrollbar-hide touch-pan-x"
+          className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 scrollbar-hide touch-pan-x"
+
           style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
         >
           {projects.map(({ title, description, url, icon }, index) => (
-            <div key={index} className="project-card snap-center shrink-0 w-96">
-              <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col h-auto max-h-[400px]">
-                <h3 className="text-xl font-semibold mb-2 text-white cursor-default flex items-center gap-3">
-                  <span>{title}</span>
-                  {icon && (
-                    <img
-                      src={icon}
-                      alt={`${title} icon`}
-                      className="w-6 h-6 object-contain"
-                      loading="lazy"
-                    />
-                  )}
-                </h3>
-                <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
-                  {description}
-                </p>
+            <div key={index} className="project-card snap-center shrink-0 w-[calc(100vw-3rem)] sm:w-96">
+
+              <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col justify-between h-full">
+
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2 text-white cursor-default">
+                    <span className="inline-flex items-center gap-2 break-words">
+                      {title}
+                      {icon && (
+                        <img
+                          src={icon}
+                          alt={`${title} icon`}
+                          className="w-6 h-6 object-contain inline-block"
+                          loading="lazy"
+                        />
+                      )}
+                    </span>
+                  </h3>
+                  <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
+                    {description}
+                  </p>
+                </div>
+
                 <div className="mt-auto">
                   <a
                     href={url}
