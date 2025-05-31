@@ -161,45 +161,53 @@ function ProjectsSection() {
       title: "PulseTechMobile",
       description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
       url: "https://github.com/FabianC1/PulseTechMobile",
-      icon: "/PulseTech.png"
+      icon: "/PulseTech.png",
+      extraInfo: "Built with React Native, TypeScript and Node.js"
     },
     {
       title: "Housing Price Prediction",
       description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
       url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models",
-      icon: "/python.png"
+      icon: "/python.png",
+      extraInfo: "Developed with Python, Pandas, and Scikit-learn"
     },
     {
       title: "Lesson Booking System (Full Stack)",
       description: "A full stack JavaScript app enabling lesson booking with frontend and backend integration.",
       url: "https://github.com/FabianC1/LessonBookingSystem-FullStack",
-      icon: "/CulinaryCanvas.png"
+      icon: "/CulinaryCanvas.png",
+      extraInfo: "Full Stack: JavaScript, Express, MongoDB"
     },
     {
       title: "Swim School Management System",
       description: "A Java desktop application managing swimming lessons, schedules, students, and instructor assignments effectively.",
       url: "https://github.com/FabianC1/SwimSchool-Management-System",
-      icon: "/java.png"
+      icon: "/java.png",
+      extraInfo: "Built with Java and JavaFX"
     },
     {
       title: "PulseTech BackEnd",
       description: "A backend service for PulseTech, built with Node.js and Express to manage API endpoints and database interactions.",
       url: "https://github.com/FabianC1/PulseTech-BackEnd",
-      icon: "/PulseTech.png"
+      icon: "/PulseTech.png",
+      extraInfo: "Developed with Node.js, Express, and MongoDB"
     },
     {
       title: "Supply Chain System Software",
       description: "A C++ group project implementing software solutions for efficient supply chain management.",
       url: "https://github.com/FabianC1/Supply-Chain-System-Software",
-      icon: "/c++.png"
+      icon: "/c++.png",
+      extraInfo: "Implemented in C++"
     },
     {
       title: "NLP Sentiment Analysis BiLSTM",
       description: "An NLP project analyzing sentiment using BiLSTM networks for improved text classification results.",
       url: "https://github.com/FabianC1/NLP-Sentiment-Analysis-BiLSTM",
-      icon: "/python.png"
+      icon: "/python.png",
+      extraInfo: "Utilised Python, PyTorch, and BiLSTM"
     }
   ];
+
 
 
   return (
@@ -225,7 +233,7 @@ function ProjectsSection() {
 
           style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
         >
-          {projects.map(({ title, description, url, icon }, index) => (
+          {projects.map(({ title, description, url, icon, extraInfo }, index) => (
             <div key={index} className="project-card snap-center shrink-0 w-[calc(100vw-3rem)] sm:w-96">
 
               <div className="project-card-content p-6 rounded-lg shadow-lg bg-darkPurple flex flex-col justify-between h-full">
@@ -260,12 +268,25 @@ function ProjectsSection() {
                     <FaGithub className="text-xl" />
                   </a>
                 </div>
+
+                {/* Extra info appears after animation completes */}
+                {extraInfo && (
+                  <div className="project-extra">
+                    <p className="text-gray-400 text-sm">{extraInfo}</p>
+                  </div>
+                )}
+
+
               </div>
             </div>
           ))}
         </div>
+
+
       </div>
     </section>
+
+
   );
 
 }
