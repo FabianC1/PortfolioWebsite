@@ -360,7 +360,8 @@ function App() {
           {/* Profile Image */}
           <div
             onClick={() => handleImageClick("/pfp.jpg")}
-            className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg w-52 h-52 md:w-[25rem] md:h-[24rem]"
+            className="cursor-pointer rounded-full overflow-hidden border-4 border-pastelBlue dark:border-white shadow-lg w-52 h-52 md:w-[25rem] md:h-[24rem]"
+
           >
             <img
               src="/pfp.jpg"
@@ -379,9 +380,9 @@ function App() {
             >
               <div
                 className={`
-    w-[95vw] h-[54vw]       /* Mobile landscape layout */
+    w-[95vw] h-[54vw]
     sm:w-auto sm:h-auto sm:max-w-[80vw] sm:max-h-[80vh]
-    rounded-lg overflow-hidden shadow-lg border-2 border-white
+    rounded-lg overflow-hidden shadow-lg border-2 border-pastelBlue dark:border-white
     transform transition-transform duration-300
     ${isAnimating ? 'scale-100' : 'scale-90'}
   `}
@@ -463,15 +464,15 @@ function App() {
           id="about"
           className="max-w-4xl mx-auto py-24 px-6 relative"
         >
-          <h2 className="text-3xl font-bold text-purple-300 mb-6 text-center md:text-left">About Me</h2>
+          <h2 className="text-3xl font-bold text-charcoalBlack dark:text-purple-300 mb-6 text-center md:text-left">About Me</h2>
 
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <img
               src="/image2.jpg"
               alt="Fabian Galasel"
-              className="w-40 h-40 rounded-full border-2 border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
+              className="w-40 h-40 rounded-full border-2 border-charcoalBlack dark:border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
             />
-            <p className="text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
+            <p className="text-charcoalBlack dark:text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
               I am Fabian, an aspiring software, web, and mobile developer with a passion for building impactful applications.
               I recently graduated with a BSc in Computer Science from Middlesex University. I'm looking for a role where I can grow—putting in the time to master new technologies
               and continuously push myself to the next level.
@@ -487,10 +488,18 @@ function App() {
             ].map((tech) => (
               <span
                 key={tech}
-                className="cursor-default px-4 py-1 text-sm rounded-full border border-skyBlue text-skyBlue bg-white/5 hover:bg-skyBlue hover:text-white transition"
+                className="cursor-default px-4 py-1 text-sm rounded-full 
+    border border-red-500 dark:border-skyBlue 
+    text-red-500 dark:text-skyBlue 
+    bg-white/5 
+    hover:bg-red-500 hover:text-black 
+    dark:hover:bg-skyBlue dark:hover:text-white 
+    transition"
               >
                 {tech}
               </span>
+
+
             ))}
           </div>
         </section>

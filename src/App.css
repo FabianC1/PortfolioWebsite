@@ -5,6 +5,12 @@ html {
 
 .gradient-border-b {
   border-bottom: 2px solid;
-  border-image: linear-gradient(to right, #00BFFF, #8b5cf6);
+  border-image: linear-gradient(to left, #ff0000e1, #87bfff); /* red in light mode */
+  border-image-slice: 1;
+}
+
+.dark .gradient-border-b {
+  border-bottom: 2px solid; /* Re-apply this */
+  border-image: linear-gradient(to right, #00BFFF, #8b5cf6); /* skyBlue to purple */
   border-image-slice: 1;
 }
