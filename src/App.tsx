@@ -312,7 +312,7 @@ function App() {
           {/* Profile Image */}
           <div
             onClick={() => handleImageClick("/pfp.jpg")}
-            className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg w-40 h-40 md:w-[25rem] md:h-[24rem]"
+            className="cursor-pointer rounded-full overflow-hidden border-4 border-white shadow-lg w-52 h-52 md:w-[25rem] md:h-[24rem]"
           >
             <img
               src="/pfp.jpg"
@@ -330,15 +330,23 @@ function App() {
               onClick={handleCloseModal}
             >
               <div
-                className={`w-[90vw] max-w-[600px] aspect-video rounded-lg overflow-hidden shadow-lg border-2 border-white transform transition-transform duration-300 ${isAnimating ? 'scale-100' : 'scale-90'}`}
+                className={`
+    w-[95vw] h-[54vw]       /* Mobile landscape layout */
+    sm:w-auto sm:h-auto sm:max-w-[80vw] sm:max-h-[80vh]
+    rounded-lg overflow-hidden shadow-lg border-2 border-white
+    transform transition-transform duration-300
+    ${isAnimating ? 'scale-100' : 'scale-90'}
+  `}
                 onClick={(e) => e.stopPropagation()}
               >
                 <img
                   src={modalImageSrc}
                   alt="Fabian Galasel Large"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
+
+
 
             </div>
           )}
