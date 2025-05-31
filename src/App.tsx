@@ -4,6 +4,7 @@ import { FaLinkedin } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 import './index.css';
 import './App.css';
+import { ThemeToggle } from './components/ThemeToggle';
 
 
 function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
@@ -325,15 +326,21 @@ function App() {
       <header
         className="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center flex-wrap bg-[rgba(18,18,31,0.45)] backdrop-blur-md shadow-md shadow-purple-800/20 gradient-border-b"
       >
-
         <h1 className="text-2xl font-bold text-purple-300">Fabian Galasel</h1>
-        <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
-          <a href="#about" className="hover:text-white transition">About</a>
-          <a href="#projects" className="hover:text-white transition">Projects</a>
-          <a href="#education" className="hover:text-white transition">Education</a>
-          <a href="#contact" className="hover:text-white transition">Contact</a>
-        </nav>
+
+        <div className="flex items-center gap-6">
+          <nav className="space-x-6 text-sm uppercase tracking-wide text-purple-200">
+            <a href="#about" className="hover:text-white transition">About</a>
+            <a href="#projects" className="hover:text-white transition">Projects</a>
+            <a href="#education" className="hover:text-white transition">Education</a>
+            <a href="#contact" className="hover:text-white transition">Contact</a>
+          </nav>
+
+          {/* Theme toggle button */}
+          <ThemeToggle />
+        </div>
       </header>
+
 
       {/* Hero Section */}
       <header className="flex items-center justify-center min-h-[60vh] bg-darkPurple px-6">
