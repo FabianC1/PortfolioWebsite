@@ -479,9 +479,10 @@ function App() {
             </p>
           </div>
 
+          {/* Floating Skills*/}
           <div className="flex flex-wrap justify-center gap-3 mt-8 max-w-4xl mx-auto">
             {[
-              "TypeScript", "Bash", "JavaScript", "HTML5", "CSS3",
+              "TypeScript", "Bash", "JavaScript", "HTML", "CSS",
               "React", "React Native", "Node.js", "Express.js", "Python",
               "Kotlin", "Racket", "Postman", "C++", "Java",
               "Vue.js", "React Navigation", "MongoDB"
@@ -494,6 +495,7 @@ function App() {
     bg-white/5 
     hover:bg-red-500 hover:text-black 
     dark:hover:bg-skyBlue dark:hover:text-white 
+    font-semibold
     transition"
               >
                 {tech}
