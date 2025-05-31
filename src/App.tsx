@@ -309,7 +309,7 @@ function App() {
   };
   return (
 
-    <div className="min-h-screen bg-charcoalBlack text-white font-sans w-full overflow-x-hidden">
+    <div className="min-h-screen font-sans w-full overflow-x-hidden bg-white text-charcoalBlack dark:bg-charcoalBlack dark:text-white transition-colors duration-300">
 
       <Helmet>
         <title>Fabian Galasel Portfolio</title>
