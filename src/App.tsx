@@ -216,9 +216,7 @@ function ProjectsSection() {
 
       {/* Scroll container with gradient edges */}
       <div className="relative">
-        {/* Left gradient */}
         <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r  pointer-events-none z-10" />
-        {/* Right gradient */}
         <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l pointer-events-none z-10" />
 
         <div
@@ -332,16 +330,16 @@ function App() {
               onClick={handleCloseModal}
             >
               <div
-                className={`w-[80vw] h-[80vh] rounded-lg overflow-hidden shadow-lg border-2 border-white transform transition-transform duration-300 ${isAnimating ? 'scale-100' : 'scale-90'
-                  }`}
+                className={`w-[90vw] max-w-[600px] aspect-video rounded-lg overflow-hidden shadow-lg border-2 border-white transform transition-transform duration-300 ${isAnimating ? 'scale-100' : 'scale-90'}`}
                 onClick={(e) => e.stopPropagation()}
               >
                 <img
                   src={modalImageSrc}
                   alt="Fabian Galasel Large"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
+
             </div>
           )}
 
