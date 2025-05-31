@@ -285,8 +285,6 @@ function ProjectsSection() {
 
       </div>
     </section>
-
-
   );
 
 }
@@ -463,7 +461,7 @@ function App() {
       {/* Education section */}
       <EducationSection />
 
-
+      {/* Contact section */}
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
         <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Contact</h2>
         <p className="text-gray-300 mb-8">
@@ -487,7 +485,10 @@ function App() {
           </a>
 
           {/* Phone Card */}
-          <div className="group flex justify-center items-center gap-6 border border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-neonPurple hover:shadow-lg hover:shadow-neonPurple/50">
+          <a
+            href="tel:+447458358427"
+            className="group flex justify-center items-center gap-6 border border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-neonPurple hover:shadow-lg hover:shadow-neonPurple/50"
+          >
             <img
               src="/phone.png"
               alt="Phone Icon"
@@ -496,10 +497,11 @@ function App() {
             <span className="text-skyBlue group-hover:text-white text-center transition-colors duration-700 ease-in-out">
               +44 7458 358 427
             </span>
-          </div>
+          </a>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="text-center py-6 text-sm text-white/50 flex items-center justify-center space-x-2">
         <span>&copy; {new Date().getFullYear()} Fabian Galasel</span>
         <img
@@ -508,7 +510,6 @@ function App() {
           className="h-20 filter contrast-200 brightness-200"
         />
       </footer>
-
 
     </div>
   );
