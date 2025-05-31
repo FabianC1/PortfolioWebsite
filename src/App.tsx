@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 import './index.css';
 import './App.css';
 
@@ -306,7 +307,19 @@ function App() {
     }, 300);
   };
   return (
+
     <div className="min-h-screen bg-charcoalBlack text-white font-sans w-full overflow-x-hidden">
+      
+      <Helmet>
+        <title>Fabian Galasel Portfolio</title>
+        <meta name="description" content="Fabian Galasel – Software, Web & Mobile Developer Portfolio" />
+        <meta property="og:title" content="Fabian Galasel Portfolio" />
+        <meta property="og:description" content="Explore my software, web, and mobile development work." />
+        <meta property="og:image" content="https://fabian-portfolio.netlify.app/pfp.jpg" />
+        <meta property="og:url" content="https://fabian-portfolio.netlify.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://fabian-portfolio.netlify.app/pfp.jpg" />
+      </Helmet>
 
       {/* Transparent Header */}
       <header
