@@ -27,12 +27,17 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
       className={`relative pl-10 pb-12 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
         }`}
     >
-      <div className="absolute left-0 top-2 w-4 h-4 bg-skyBlue rounded-full border-2 border-white"></div>
+      <div className="absolute left-0 top-2 w-4 h-4 rounded-full 
+                bg-orange dark:bg-skyBlue 
+                border-2 border-black dark:border-white">
+      </div>
 
-      <div className="bg-darkPurple p-6 rounded-lg border border-purple-700 shadow-md">
+      <div className="bg-darkPurple p-6 rounded-lg border border-pastelBlue dark:border-purple-700 shadow-md">
+
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex-1">
-            <h3 className="text-xl font-semibold text-purple-300 flex items-center gap-3 mb-1">
+            <h3 className="text-xl font-semibold text-charcoalBlack dark:text-purple-300 flex items-center gap-3 mb-1">
+
               <span>{item.institution}</span>
               {item.logo && (
                 <img
@@ -42,15 +47,16 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
                 />
               )}
             </h3>
-            <p className="text-skyBlue">{item.degree}</p>
-            <p className="text-sm text-gray-400 mb-2">{item.duration}</p>
+            <p className="text-orange dark:text-skyBlue">{item.degree}</p>
+
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{item.duration}</p>
             {/** Mobile collapsible block */}
             <div className="block md:hidden">
               <details
-                className="text-gray-300 whitespace-pre-line cursor-pointer"
+                className="text-black dark:text-gray-300 whitespace-pre-line cursor-pointer"
                 onToggle={(e) => setExpanded(e.currentTarget.open)}
               >
-                <summary className="text-skyBlue underline mb-2">
+                <summary className="text-[#7DAFC3] dark:text-skyBlue underline mb-2">
                   {expanded ? "Less Details" : "More Details"}
                 </summary>
                 <p>{item.details}</p>
@@ -58,7 +64,9 @@ function EducationTimelineItem({ item }: { item: typeof educationData[0] }) {
             </div>
 
             {/** Desktop always expanded */}
-            <p className="hidden md:block text-gray-300 whitespace-pre-line">{item.details}</p>
+            <p className="hidden md:block text-black dark:text-gray-300 whitespace-pre-line">
+              {item.details}
+            </p>
 
           </div>
 
@@ -126,8 +134,10 @@ const educationData = [
 function EducationSection() {
   return (
     <section id="education" className="max-w-4xl mx-auto py-20 px-6">
-      <h2 className="text-3xl font-bold text-purple-300 mb-10 text-center md:text-left">Education</h2>
-      <div className="relative border-l-4 border-purple-500 pl-4">
+      <h2 className="text-3xl font-bold text-charcoalBlack dark:text-purple-300 mb-10 text-center md:text-left">
+        Education
+      </h2>
+      <div className="relative border-l-4 border-pastelBlue dark:border-purple-500 pl-4">
         {educationData.map((item, index) => (
           <EducationTimelineItem key={index} item={item} />
         ))}
@@ -135,6 +145,7 @@ function EducationSection() {
     </section>
   );
 }
+
 
 
 function ProjectsSection() {

@@ -26,6 +26,7 @@ export default {
         arctic: '#E0FFFF',
         neonPurple: '#BF40FF',
         white: '#FFFFFF',
+        orange: '#ef4444',
       }
     },
     
