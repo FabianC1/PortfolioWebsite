@@ -528,8 +528,11 @@ function App() {
 
       {/* Contact section */}
       <section id="contact" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Contact</h2>
-        <p className="text-gray-300 mb-8">
+        <h2 className="text-3xl font-bold text-charcoalBlack dark:text-purple-300 mb-8 text-center md:text-left">
+          Contact
+        </h2>
+
+        <p className="text-gray-700 dark:text-gray-300 mb-8">
           Feel free to reach out via email or phone. I'm open to opportunities and happy to connect!
         </p>
 
@@ -537,14 +540,14 @@ function App() {
           {/* Email Card */}
           <a
             href="mailto:galaselfabian@gmail.com"
-            className="group flex justify-center items-center gap-6 border border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-neonPurple hover:shadow-lg hover:shadow-neonPurple/50"
+            className="group flex justify-center items-center gap-6 border border-black dark:border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-orange dark:hover:border-neonPurple hover:shadow-lg hover:shadow-orange/50 dark:hover:shadow-neonPurple/50"
           >
             <img
               src="/gmail.png"
               alt="Email Icon"
               className="w-6 h-6 transition-transform group-hover:scale-110 duration-700"
             />
-            <span className="text-skyBlue group-hover:text-white text-center transition-colors duration-700 ease-in-out">
+            <span className="text-charcoalBlack dark:text-skyBlue group-hover:text-orange dark:group-hover:text-white text-center transition-colors duration-700 ease-in-out">
               galaselfabian@gmail.com
             </span>
           </a>
@@ -552,14 +555,14 @@ function App() {
           {/* Phone Card */}
           <a
             href="tel:+447458358427"
-            className="group flex justify-center items-center gap-6 border border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-neonPurple hover:shadow-lg hover:shadow-neonPurple/50"
+            className="group flex justify-center items-center gap-6 border border-black dark:border-white p-4 rounded-xl transition-all duration-700 ease-in-out hover:border-orange dark:hover:border-neonPurple hover:shadow-lg hover:shadow-orange/50 dark:hover:shadow-neonPurple/50"
           >
             <img
               src="/phone.png"
               alt="Phone Icon"
               className="w-6 h-6 transition-transform group-hover:scale-110 duration-700"
             />
-            <span className="text-skyBlue group-hover:text-white text-center transition-colors duration-700 ease-in-out">
+            <span className="text-charcoalBlack dark:text-skyBlue group-hover:text-orange dark:group-hover:text-white text-center transition-colors duration-700 ease-in-out">
               +44 7458 358 427
             </span>
           </a>
