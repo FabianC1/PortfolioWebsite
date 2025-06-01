@@ -570,12 +570,12 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-6 text-sm text-white/50 flex items-center justify-center space-x-2">
+      <footer className="text-center py-6 text-sm text-black/60 dark:text-white/50 flex items-center justify-center space-x-2">
         <span>&copy; {new Date().getFullYear()} Fabian Galasel</span>
         <img
           src="/Signature.png"
           alt="Fabian Galasel Signature"
-          className="h-20 filter contrast-200 brightness-200"
+          className="h-20 filter grayscale contrast-0 brightness-75 dark:brightness-200 dark:contrast-200"
         />
       </footer>
 
