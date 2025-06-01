@@ -212,13 +212,13 @@ function ProjectsSection() {
 
   return (
     <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
-      <h2 className="text-3xl font-bold text-purple-300 mb-8 text-center md:text-left">Projects</h2>
+      <h2 className="text-3xl font-bold text-charcoalBlack dark:text-purple-300 mb-8 text-center md:text-left">Projects</h2>
 
       {/* Scroll instructions */}
-      <p className="text-center text-sm text-gray-400 mb-4 md:hidden">
+      <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-4 md:hidden">
         ← Swipe left/right to explore →
       </p>
-      <p className="text-center text-sm text-gray-400 mb-4 hidden md:block">
+      <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-4 hidden md:block">
         ← Scroll horizontally to view more projects →
       </p>
 
@@ -239,7 +239,7 @@ function ProjectsSection() {
               <div className="project-card-content p-6 rounded-lg shadow-lg bg-inherit text-inherit flex flex-col justify-between h-full">
 
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2 text-white cursor-default">
+                  <h3 className="text-xl font-semibold mb-2 text-inherit cursor-default">
                     <span className="inline-flex items-center gap-2 break-words">
                       {title}
                       {icon && (
@@ -252,7 +252,7 @@ function ProjectsSection() {
                       )}
                     </span>
                   </h3>
-                  <p className="text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 cursor-default" style={{ whiteSpace: 'normal' }}>
                     {description}
                   </p>
                 </div>
@@ -262,7 +262,10 @@ function ProjectsSection() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-skyBlue hover:text-white inline-flex items-center space-x-2 cursor-pointer"
+                    className="inline-flex items-center space-x-2 cursor-pointer 
+             text-skyBlue hover:text-black 
+             dark:text-skyBlue dark:hover:text-white 
+             transition-colors duration-300"
                   >
                     <span>View on GitHub</span>
                     <FaGithub className="text-xl" />
