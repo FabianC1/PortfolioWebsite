@@ -229,8 +229,8 @@ function ProjectsSection() {
 
         <div
           ref={scrollRef}
-          className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 scrollbar-hide touch-pan-x"
-
+          className="relative w-full max-w-full flex space-x-6 overflow-x-auto snap-x snap-proximity px-2 scrollbar-hide touch-pan-x
+             bg-[#f8f9fb] dark:bg-charcoalBlack text-black dark:text-white"
           style={{ scrollBehavior: 'auto', overflowY: 'hidden' }}
         >
           {projects.map(({ title, description, url, icon, extraInfo }, index) => (
@@ -500,7 +500,6 @@ function App() {
               >
                 {tech}
               </span>
-
 
             ))}
           </div>
