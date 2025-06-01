@@ -484,7 +484,7 @@ function App() {
             <img
               src="/image2.jpg"
               alt="Fabian Galasel"
-              className="w-40 h-40 rounded-full border-2 border-charcoalBlack dark:border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
+              className="w-40 h-40 rounded-full border-2 border-orange dark:border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
             />
             <p className="text-charcoalBlack dark:text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
               I am Fabian, an aspiring software, web, and mobile developer with a passion for building impactful applications.
