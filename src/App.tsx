@@ -177,6 +177,14 @@ function ProjectsSection() {
       extraInfo: "Built with React Native, TypeScript and Node.js"
     },
     {
+      title: "SoloFit",
+      description: "A bodyweight workout mobile app inspired by Solo Leveling. Features custom workouts, quote motivation, rep tracking, and calendar-based progress.",
+      url: "https://github.com/FabianC1/SoloFit",
+      icon: "/solofit.png",
+      extraInfo: "Built with React Native, TypeScript, Firebase"
+    },
+
+    {
       title: "Housing Price Prediction",
       description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
       url: "https://github.com/FabianC1/Housing-Price-Prediction-Using-Regression-Models",
