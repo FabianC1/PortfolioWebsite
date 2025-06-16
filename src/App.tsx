@@ -235,10 +235,10 @@ function ProjectsSection() {
 
       {/* Scroll instructions */}
       <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-4 md:hidden">
-        ← Swipe left/right to explore →
+        ←Tap & Swipe left/right to explore →
       </p>
       <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-4 hidden md:block">
-        ← Scroll horizontally to view more projects →
+        ←Hover & Scroll horizontally to view more projects →
       </p>
 
       {/* Scroll container with gradient edges */}
@@ -495,7 +495,7 @@ function App() {
               className="w-40 h-40 rounded-full border-2 border-orange dark:border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
             />
             <p className="text-charcoalBlack dark:text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-              I am Fabian, an aspiring software, web, and mobile developer with a passion for building impactful applications.
+              I am Fabian, an aspiring software, web, or mobile developer with a passion for building impactful applications.
               I recently graduated with a BSc in Computer Science from Middlesex University. I'm looking for a role where I can grow—putting in the time to master new technologies
               and continuously push myself to the next level.
             </p>
