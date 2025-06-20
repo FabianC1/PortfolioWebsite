@@ -170,6 +170,13 @@ function ProjectsSection() {
 
   const projects = [
     {
+      title: "SoloFit",
+      description: "A bodyweight workout mobile app inspired by Solo Leveling. Features custom workouts, quote motivation, rep tracking, and calendar-based progress.",
+      url: "https://github.com/FabianC1/SoloFit",
+      icon: "/solofit.png",
+      extraInfo: "Built with React Native, TypeScript, Firebase"
+    },
+    {
       title: "PulseTechMobile",
       description: "A React Native mobile app for medication tracking, messaging, and appointment management.",
       url: "https://github.com/FabianC1/PulseTechMobile",
@@ -177,13 +184,19 @@ function ProjectsSection() {
       extraInfo: "Built with React Native, TypeScript and Node.js"
     },
     {
-      title: "SoloFit",
-      description: "A bodyweight workout mobile app inspired by Solo Leveling. Features custom workouts, quote motivation, rep tracking, and calendar-based progress.",
-      url: "https://github.com/FabianC1/SoloFit",
-      icon: "/solofit.png",
-      extraInfo: "Built with React Native, TypeScript, Firebase"
+      title: "PulseTech BackEnd",
+      description: "A backend service for PulseTech, built with Node.js and Express to manage API endpoints and database interactions.",
+      url: "https://github.com/FabianC1/PulseTech-BackEnd",
+      icon: "/PulseTech.png",
+      extraInfo: "Developed with Node.js, Express, and MongoDB"
     },
-
+    {
+      title: "PulseTech Web",
+      description: "A responsive healthcare dashboard built with Vue.js, featuring real-time access to appointments, medications, chat, and records with role-based access control.",
+      url: "https://github.com/FabianC1/PulseTech-FrontEnd",
+      icon: "/PulseTech.png",
+      extraInfo: "Developed from scratch with Vue.js, JavaScript, and Axios"
+    },
     {
       title: "Housing Price Prediction",
       description: "A machine learning project predicting house prices using advanced regression models for improved accuracy.",
@@ -204,13 +217,6 @@ function ProjectsSection() {
       url: "https://github.com/FabianC1/SwimSchool-Management-System",
       icon: "/java.png",
       extraInfo: "Built with Java and JavaFX"
-    },
-    {
-      title: "PulseTech BackEnd",
-      description: "A backend service for PulseTech, built with Node.js and Express to manage API endpoints and database interactions.",
-      url: "https://github.com/FabianC1/PulseTech-BackEnd",
-      icon: "/PulseTech.png",
-      extraInfo: "Developed with Node.js, Express, and MongoDB"
     },
     {
       title: "Supply Chain System Software",
