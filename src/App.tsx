@@ -170,6 +170,14 @@ function ProjectsSection() {
 
   const projects = [
     {
+      title: "Unknown Systems – UX Design",
+      description: "A UX case study exploring user flows for a course and job search system. Designed using Figma with a focus on accessibility and clear navigation.",
+      url: "https://www.figma.com/proto/v2PTX5y8T1b1DhQoE0Gr5v/Unknown-Systems-UX-Design?node-id=1-2&p=f&t=mf2VRQQCYPpv2RPY-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
+      icon: "/Figma.png",
+      extraInfo: "Built entirely in Figma – includes wireframes, hi-fi mockups, and interactive prototypes"
+    }
+    ,
+    {
       title: "SoloFit",
       description: "A bodyweight workout mobile app inspired by Solo Leveling. Features custom workouts, quote motivation, rep tracking, and calendar-based progress.",
       url: "https://github.com/FabianC1/SoloFit",
@@ -288,12 +296,21 @@ function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-2 cursor-pointer 
-             text-skyBlue hover:text-black 
-             dark:text-skyBlue dark:hover:text-white 
-             transition-colors duration-300"
+text-skyBlue hover:text-black 
+dark:text-skyBlue dark:hover:text-white 
+transition-colors duration-300"
                   >
-                    <span>View on GitHub</span>
-                    <FaGithub className="text-xl" />
+                    {title === "Unknown Systems – UX Design" ? (
+                      <>
+                        <span>View in Figma</span>
+                        <img src="/Figma.png" alt="Figma Logo" className="w-5 h-5 object-contain" />
+                      </>
+                    ) : (
+                      <>
+                        <span>View on GitHub</span>
+                        <FaGithub className="text-xl" />
+                      </>
+                    )}
                   </a>
                 </div>
 
@@ -455,7 +472,7 @@ function App() {
                 </a>
               </div>
               <a
-                href="/Fabian Galasel CV.pdf"
+                href="/Fabian Galasel UX CV.pdf"
                 download
                 className="group slide-bg flex items-center space-x-2 border border-white text-charcoalBlack dark:text-skyBlue px-4 py-2 rounded-full md:ml-[52px] mx-auto md:mx-0 transition-colors duration-300"
               >
