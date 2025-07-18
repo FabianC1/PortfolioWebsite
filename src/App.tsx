@@ -518,36 +518,12 @@ function App() {
               className="w-40 h-40 rounded-full border-2 border-orange dark:border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
             />
             <p className="text-charcoalBlack dark:text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-              I am Fabian, an aspiring software, web, or mobile developer with a passion for building impactful applications.
-              I recently graduated with a BSc in Computer Science from Middlesex University. I'm looking for a role where I can grow—putting in the time to master new technologies
-              and continuously push myself to the next level.
+              I started out in software development — building full-stack web apps, mobile experiences, and AI-powered tools.
+              Over time, I found myself more drawn to the design side of things: how people interact with a product, and how to make that experience as intuitive and engaging as possible.
+              These days, I’m focused on UX design, and my background in coding helps me see the bigger picture — how design decisions affect functionality.
             </p>
           </div>
 
-          {/* Floating Skills*/}
-          <div className="flex flex-wrap justify-center gap-3 mt-8 max-w-4xl mx-auto">
-            {[
-              "TypeScript", "Bash", "JavaScript", "HTML", "CSS",
-              "React", "React Native", "Node.js", "Express.js", "Python",
-              "Kotlin", "Racket", "Postman", "C++", "Java",
-              "Vue.js", "React Navigation", "MongoDB"
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="cursor-default px-4 py-1 text-sm rounded-full 
-    border border-red-500 dark:border-skyBlue 
-    text-red-500 dark:text-skyBlue 
-    bg-white/5 
-    hover:bg-red-500 hover:text-black 
-    dark:hover:bg-skyBlue dark:hover:text-white 
-    font-semibold
-    transition"
-              >
-                {tech}
-              </span>
-
-            ))}
-          </div>
         </section>
       </div>
 
