@@ -505,25 +505,30 @@ function App() {
 
       {/* About section */}
       <div className="w-full overflow-x-hidden">
-        <section
-          id="about"
-          className="max-w-4xl mx-auto py-24 px-6 relative"
-        >
-          <h2 className="text-3xl font-bold text-charcoalBlack dark:text-purple-300 mb-6 text-center md:text-left">About Me</h2>
+        <section id="about" className="max-w-4xl mx-auto py-24 px-6 relative">
+          <h2 className="text-3xl font-bold text-charcoalBlack dark:text-purple-300 mb-6 text-center md:text-left">
+            About Me
+          </h2>
 
-          <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-4xl text-charcoalBlack dark:text-gray-300 text-lg leading-relaxed">
             <img
               src="/image2.jpg"
               alt="Fabian Galasel"
-              className="w-40 h-40 rounded-full border-2 border-orange dark:border-purple-500 mt-2 flex-shrink-0 object-cover mx-auto md:mx-0"
+              className="w-64 h-64 rounded-full border-2 border-orange dark:border-purple-500 object-cover float-left mr-6 mb-2"
+              style={{
+                shapeOutside: 'circle()',
+                clipPath: 'circle()',
+                transform: 'translateY(0.75rem)' // lowers the image without affecting text wrap
+              }}
             />
-            <p className="text-charcoalBlack dark:text-gray-300 leading-relaxed text-lg backdrop-blur-sm bg-white/5 p-6 rounded-lg border border-white/10 shadow-lg max-w-xl">
-              I started out in software development — building full-stack web apps, mobile experiences, and AI-powered tools.
-              Over time, I found myself more drawn to the design side of things: how people interact with a product, and how to make that experience as intuitive and engaging as possible.
-              These days, I’m focused on UX design, and my background in coding helps me see the bigger picture — how design decisions affect functionality.
+            <p>
+              I started out in software development — building full-stack web apps, mobile experiences, and AI-powered tools. While I enjoyed the logic and creativity of coding, I gradually found myself more drawn to the design side: understanding how users think, and shaping intuitive, accessible digital experiences.
+              Today, I’m focused on UX design, where I can combine creativity with structure, and where my coding knowledge helps me collaborate closely with developers and work smarter with AI tools.
+              I’m highly efficient when working with AI-assisted coding, but I know my strengths lie more in design thinking, user journeys, and problem-solving through UX.
+              I’m actively looking for a role in UX, but I’m also open to related paths in the tech world — from software testing and documentation to UI, support, or technical roles that value clear thinking and collaboration.
+              I don’t have all the answers yet, but I’m eager to learn, contribute, and grow.
             </p>
           </div>
-
         </section>
       </div>
 
