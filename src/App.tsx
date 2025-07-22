@@ -518,10 +518,10 @@ function App() {
               style={{
                 shapeOutside: 'circle()',
                 clipPath: 'circle()',
-                transform: 'translateY(0.75rem)' // lowers the image without affecting text wrap
+                transform: 'translateY(0.75rem)' 
               }}
             />
-            <p>
+            <p> 
               I started out in software development — building full-stack web apps, mobile experiences, and AI-powered tools. While I enjoyed the logic and creativity of coding, I gradually found myself more drawn to the design side: understanding how users think, and shaping intuitive, accessible digital experiences.
               Today, I’m focused on UX design, where I can combine creativity with structure, and where my coding knowledge helps me collaborate closely with developers and work smarter with AI tools.
               I’m highly efficient when working with AI-assisted coding, but I know my strengths lie more in design thinking, user journeys, and problem-solving through UX.
