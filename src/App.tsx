@@ -170,13 +170,19 @@ function ProjectsSection() {
 
   const projects = [
     {
+      title: "StreamScribe – Global YouTube Transcription Service",
+      description: "A professional AI-powered YouTube transcription platform with international pricing, responsive design, and tiered subscription plans.",
+      url: "https://github.com/FabianC1/StreamScribe",
+      icon: "/StreamScribe.png",
+      extraInfo: "Built with Next.js, React, TypeScript, Tailwind CSS, MongoDB, NextAuth.js, Stripe, and CursorAI."
+    },
+    {
       title: "Unknown Systems – UX Design",
       description: "A UX case study exploring user flows for a course and job search system. Designed using Figma with a focus on accessibility and clear navigation.",
       url: "https://www.figma.com/proto/v2PTX5y8T1b1DhQoE0Gr5v/Unknown-Systems-UX-Design?node-id=1-2&p=f&t=mf2VRQQCYPpv2RPY-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
       icon: "/Figma.png",
       extraInfo: "Built entirely in Figma – includes wireframes, hi-fi mockups, and interactive prototypes"
-    }
-    ,
+    },
     {
       title: "SoloFit",
       description: "A bodyweight workout mobile app inspired by Solo Leveling. Features custom workouts, quote motivation, rep tracking, and calendar-based progress.",
