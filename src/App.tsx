@@ -453,7 +453,7 @@ function App() {
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-extrabold">Fabian Galasel</h1>
             <p className="text-xl md:text-2xl mt-2 font-light text-charcoalBlack dark:text-skyBlue">
-              Aspiring Software, Web & Mobile Developer
+              Computer Science Graduate
             </p>
 
             <div className="mt-10 flex flex-col items-center md:items-start space-y-4">
